@@ -1,7 +1,6 @@
 /*!------------------------------------------------------------------
 [MAIN STYLESHEET]
 
-PROJECT:	Project Name
 VERSION:	Versoin Number
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
@@ -129,6 +128,24 @@ h6, .h6 {
   box-shadow: none !important;
 }
 
+.btn-secondary {
+  background: #ff9e2b;
+  color: #150340;
+}
+
+.btn-secondary:active {
+  background: #dc7e0f !important;
+}
+
+.btn-secondary:hover {
+  background: #dc7e0f;
+}
+
+.btn-secondary.focus, .btn-secondary.active {
+  background: #150340 !important;
+  box-shadow: none !important;
+}
+
 .btn-transparent {
   background: transparent;
   color: #41228e;
@@ -177,6 +194,7 @@ ul {
 img {
   vertical-align: middle;
   border: 0;
+  align-content: center;
 }
 
 a,
@@ -224,6 +242,7 @@ a:hover {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  max-height: 100%;
 }
 
 /* overlay */
@@ -251,7 +270,11 @@ a:hover {
 }
 
 .bg-primary {
-  background: #41228e !important;
+  background-image: url(https://i.imgur.com/f9TzU4P.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .bg-gray {
@@ -439,7 +462,7 @@ textarea.form-control {
 @media (max-width: 991px) {
   .navigation {
     padding: 20px;
-    background: #41228e;
+    background: transparent;
   }
 }
 
@@ -460,6 +483,7 @@ textarea.form-control {
 .hero-area {
   padding: 300px 0 200px;
   position: relative;
+  height: 100vh;
 }
 
 @media (max-width: 767px) {
@@ -471,12 +495,18 @@ textarea.form-control {
 
 .hero-area h1 {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  padding-bottom: 60px;
 }
 
 .layer {
   position: absolute;
   z-index: 1;
+}
+
+#l0 {
+  top: 200px;
+  right: 170px;
 }
 
 #l1 {
@@ -505,7 +535,7 @@ textarea.form-control {
 }
 
 #l6 {
-  bottom: -20px;
+  bottom: 280px;
   left: 10%;
 }
 
