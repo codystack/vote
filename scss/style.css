@@ -1,6 +1,7 @@
 /*!------------------------------------------------------------------
 [MAIN STYLESHEET]
 
+PROJECT:	Project Name
 VERSION:	Versoin Number
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
@@ -88,16 +89,19 @@ h6, .h6 {
   border: 0;
   position: relative;
   z-index: 1;
+  -webkit-transition: .2s ease;
   transition: .2s ease;
 }
 
 .btn:focus {
   outline: 0;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .btn:active {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn-sm {
@@ -125,25 +129,8 @@ h6, .h6 {
 
 .btn-primary.focus, .btn-primary.active {
   background: #542cb7 !important;
-  box-shadow: none !important;
-}
-
-.btn-secondary {
-  background: #ff9e2b;
-  color: #150340;
-}
-
-.btn-secondary:active {
-  background: #dc7e0f !important;
-}
-
-.btn-secondary:hover {
-  background: #dc7e0f;
-}
-
-.btn-secondary.focus, .btn-secondary.active {
-  background: #150340 !important;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .btn-transparent {
@@ -180,9 +167,15 @@ body {
   bottom: 0;
   background-color: #fff;
   z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 ol,
@@ -194,7 +187,6 @@ ul {
 img {
   vertical-align: middle;
   border: 0;
-  align-content: center;
 }
 
 a,
@@ -207,6 +199,7 @@ a,
 button,
 select {
   cursor: pointer;
+  -webkit-transition: .2s ease;
   transition: .2s ease;
 }
 
@@ -242,7 +235,6 @@ a:hover {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  max-height: 100%;
 }
 
 /* overlay */
@@ -270,11 +262,7 @@ a:hover {
 }
 
 .bg-primary {
-  background-image: url(https://i.imgur.com/f9TzU4P.png);
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #41228e !important;
 }
 
 .bg-gray {
@@ -358,7 +346,8 @@ a:hover {
 }
 
 .shadow {
-  box-shadow: 0px 18px 39.1px 6.9px rgba(224, 241, 255, 0.34) !important;
+  -webkit-box-shadow: 0px 18px 39.1px 6.9px rgba(224, 241, 255, 0.34) !important;
+          box-shadow: 0px 18px 39.1px 6.9px rgba(224, 241, 255, 0.34) !important;
 }
 
 .bg-dark {
@@ -405,6 +394,7 @@ a:hover {
   color: transparent;
   border-radius: 10px;
   overflow: hidden;
+  -webkit-transition: .2s ease;
   transition: .2s ease;
   border: 0;
 }
@@ -421,7 +411,8 @@ a:hover {
 .form-control:focus {
   border-color: #41228e;
   outline: 0;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 textarea.form-control {
@@ -445,6 +436,7 @@ textarea.form-control {
 /* /card */
 .navigation {
   padding: 40px 130px;
+  -webkit-transition: .3s ease;
   transition: .3s ease;
 }
 
@@ -462,7 +454,7 @@ textarea.form-control {
 @media (max-width: 991px) {
   .navigation {
     padding: 20px;
-    background: transparent;
+    background: #41228e;
   }
 }
 
@@ -483,7 +475,6 @@ textarea.form-control {
 .hero-area {
   padding: 300px 0 200px;
   position: relative;
-  height: 100vh;
 }
 
 @media (max-width: 767px) {
@@ -495,18 +486,12 @@ textarea.form-control {
 
 .hero-area h1 {
   position: relative;
-  z-index: 1;
-  padding-bottom: 60px;
+  z-index: 2;
 }
 
 .layer {
   position: absolute;
   z-index: 1;
-}
-
-#l0 {
-  top: 200px;
-  right: 170px;
 }
 
 #l1 {
@@ -535,7 +520,7 @@ textarea.form-control {
 }
 
 #l6 {
-  bottom: 280px;
+  bottom: -20px;
   left: 10%;
 }
 
@@ -632,6 +617,7 @@ textarea.form-control {
 /* /education */
 /* service */
 .hover-bg-primary {
+  -webkit-transition: .3s ease;
   transition: .3s ease;
 }
 
@@ -644,6 +630,7 @@ textarea.form-control {
 }
 
 .active-bg-primary {
+  -webkit-transition: .3s ease;
   transition: .3s ease;
   background: #41228e;
 }
@@ -653,11 +640,13 @@ textarea.form-control {
 }
 
 .hover-shadow {
+  -webkit-transition: .2s ease;
   transition: .2s ease;
 }
 
 .hover-shadow:hover {
-  box-shadow: 0px 18px 40px 8px rgba(224, 241, 255, 0.54) !important;
+  -webkit-box-shadow: 0px 18px 40px 8px rgba(224, 241, 255, 0.54) !important;
+          box-shadow: 0px 18px 40px 8px rgba(224, 241, 255, 0.54) !important;
 }
 
 /* /service */
@@ -667,6 +656,7 @@ textarea.form-control {
 }
 
 .hover-wrapper img {
+  -webkit-transition: .3s ease;
   transition: .3s ease;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -692,6 +682,7 @@ textarea.form-control {
   background: rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: .3s ease;
   transition: .3s ease;
 }
 
@@ -772,7 +763,8 @@ textarea.form-control {
 .shadow-down::before {
   position: absolute;
   content: "";
-  box-shadow: 0px 0px 80.75px 14.25px rgba(224, 241, 255, 0.34);
+  -webkit-box-shadow: 0px 0px 80.75px 14.25px rgba(224, 241, 255, 0.34);
+          box-shadow: 0px 0px 80.75px 14.25px rgba(224, 241, 255, 0.34);
   height: 100%;
   width: 100%;
   left: 0;
@@ -782,13 +774,21 @@ textarea.form-control {
 
 /* /footer */
 .card-lg {
-  flex-direction: row-reverse;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 991px) {
   .card-lg {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -936,5 +936,4 @@ blockquote {
 .filter-controls li.active {
   font-weight: bold;
 }
-
-/*# sourceMappingURL=maps/style.css.map */
+/*# sourceMappingURL=style.css.map */
