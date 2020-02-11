@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
- <title>Nigeria's 1st Online voting platform&trade;</title>
+ <title>Vote Online&trade; :: Nigeria's 1st Online voting platform</title>
+
+ <!-- Favicon -->
+  <link href="https://i.imgur.com/kVguEsz.png" rel="icon" type="image/png">
 <head>
 <!-- index head -->
 </head>

@@ -42,9 +42,21 @@ textarea {
 img {
   max-width: 100%; }
 
+
+.paycon {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+}
+
+.caption {
+    display: block;
+}
+
 .wrapper {
-  height: 100vh;
   display: flex;
+  padding-top: 30px;
   align-items: center;
   justify-content: center; }
 
@@ -142,14 +154,24 @@ h3 {
   margin-bottom: 75px; }
 
 p {
-  font-family: "Muli-SemiBold";
+  font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: #259dab;
   text-align: center;
   margin-bottom: 26px; }
 
+
+h6 {
+  font-family: "Muli-SemiBold";
+  font-size: 20px;
+  color: #2f2e2e;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
 .form-row {
   display: flex;
+  flex-wrap: nowrap;
   margin-bottom: 18px; }
   .form-row .form-holder {
     width: 50%;
@@ -413,3 +435,9 @@ textarea.form-control {
     bottom: 3%; } }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.input-group.mba {
+    width: 50%;
+    padding-bottom: 20px;
+}

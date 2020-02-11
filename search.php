@@ -30,7 +30,8 @@
             <button class="btn-search" type="button">SEARCH</button>
           </div>
         </div>
-        <button class="bubbly-button"><a href="contestants" style="text-decoration: none; color: #fff;">VIEW CONTESTANTS</a></button>
+        <!--
+        <button class="bubbly-button"><a href="contestants" style="text-decoration: none; color: #fff;">VIEW CONTESTANTS</a></button>-->
       
       </form>
     </div>

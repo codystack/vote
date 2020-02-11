@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Nigeria's 1st Online voting platform&trade; :: Contestants</title>
+  <title>Vote Online&trade; :: Contestants</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
