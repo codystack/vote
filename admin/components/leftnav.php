@@ -10,6 +10,7 @@
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
+        <!--
         <li class="nav-item dropdown">
           <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="ni ni-bell-55"></i>
@@ -21,12 +22,12 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
+        -->
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg
-">
+                <img alt="Image placeholder" src="https://i.imgur.com/n1d2JNC.jpg">
               </span>
             </div>
           </a>
@@ -77,6 +78,7 @@
           </div>
         </div>
         <!-- Form -->
+        <!--
         <form class="mt-4 mb-3 d-md-none">
           <div class="input-group input-group-rounded input-group-merge">
             <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
@@ -87,41 +89,48 @@
             </div>
           </div>
         </form>
+        -->
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item  active ">
             <a class="nav-link  active " href="\">
-              <i class="ni ni-align-left-2 text-primary"></i> Dashboard
+              <i class="ni ni-align-left-2 text-blue"></i> Dashboard
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="./examples/icons.html">
-              <i class="ni ni-planet text-blue"></i> Icons
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="contestantsDropdown" role="button" data-toggle="dropdown">
+              <i class="ni ni-single-02 text-blue"></i> Contestants
             </a>
+            <div class="dropdown-menu" aria-labelledby="contestantsDropdown">
+              <a class="dropdown-item" href="contestants">Add contestants</a>
+              <a class="dropdown-item" href="#">View contestants</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Trash</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="./examples/maps.html">
-              <i class="ni ni-pin-3 text-orange"></i> Maps
+              <i class="ni ni-pin-3 text-blue"></i> Maps
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="./examples/profile.html">
-              <i class="ni ni-single-02 text-yellow"></i> User profile
+              <i class="ni ni-single-02 text-blue"></i> User profile
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="./examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-red"></i> Tables
+              <i class="ni ni-bullet-list-67 text-blue"></i> Tables
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./examples/login.html">
-              <i class="ni ni-key-25 text-info"></i> Login
+              <i class="ni ni-key-25 text-blue"></i> Login
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./examples/register.html">
-              <i class="ni ni-circle-08 text-pink"></i> Register
+              <i class="ni ni-circle-08 text-blue"></i> Register
             </a>
           </li>
         </ul>
@@ -132,7 +141,7 @@
         <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="https://voteonline.com.ng/documentation" target="_blank">
+            <a class="nav-link" href="docs/documentation">
               <i class="ni ni-spaceship"></i> Getting started
             </a>
           </li>

@@ -1,18 +1,13 @@
 /*!
 
 =========================================================
-* Argon Dashboard - v1.1.2
-=========================================================
+* Vote Online Dashboard - v2.1.2
+========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2018 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
+* Product Page: https://www.voteonline.com.ng
+* Copyright 2020 WebifyNG (https://www.webify.com.ng)
 
 =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
 :root {
@@ -191,14 +186,14 @@ sup {
 }
 
 a {
-  color: #5e72e4;
+  color: #259dab;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #233dd2;
+  color: #0ecce2;
   text-decoration: none;
 }
 
@@ -4964,6 +4959,7 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   padding: 1.5rem;
+  padding-top: 3.5rem;
 }
 
 .card-title {
@@ -11639,7 +11635,7 @@ button.bg-darker:focus {
 
   .pt-lg-5,
   .py-lg-5 {
-    padding-top: 3rem !important;
+    padding-top: 6rem !important;
   }
 
   .pr-lg-5,
@@ -11924,21 +11920,22 @@ button.bg-darker:focus {
   .p-lg-8 {
     padding: 8rem !important;
   }
-
+/*
   .pt-lg-8,
   .py-lg-8 {
     padding-top: 8rem !important;
   }
-
+*/
   .pr-lg-8,
   .px-lg-8 {
     padding-right: 8rem !important;
   }
-
+/*
   .pb-lg-8,
   .py-lg-8 {
     padding-bottom: 8rem !important;
   }
+  */
 
   .pl-lg-8,
   .px-lg-8 {
@@ -14576,12 +14573,12 @@ button.section-darker:focus {
 }
 
 .text-blue {
-  color: #5e72e4 !important;
+  color: #031a32 !important;
 }
 
 a.text-blue:hover,
 a.text-blue:focus {
-  color: #324cdd !important;
+  color: #031a32 !important;
 }
 
 .text-indigo {
