@@ -15737,11 +15737,11 @@ a.btn-icon-only {
 }
 
 .custom-toggle input:checked+.custom-toggle-slider {
-  border: 1px solid #5e72e4;
+  border: 1px solid #259dab;
 }
 
 .custom-toggle input:checked+.custom-toggle-slider:before {
-  background: #5e72e4;
+  background: #259dab;
   transform: translateX(1.625rem);
 }
 
@@ -20674,4 +20674,30 @@ pre>code.highlight {
   margin-left: 1rem;
 }
 
+.col.addcontestants {
+    background-color: #fff;
+    border-radius: 6px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.pseudotrigger {
+  display: flex;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.pseudotrigger h4 {
+  padding-right: 15px;
+}
+
+.votestatustrigger {
+  align-items: center;
+}
+
+.votestatustrigger h4 {
+  padding-right: 15px;
+  padding-bottom: 20px;
+  color: #fff;
+}
 /*# sourceMappingURL=dashboard-free.css.map */

@@ -12,22 +12,22 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="../assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="../assets/css/voteonline-dashboard.css?v2.1.2" rel="stylesheet">
+  <link type="text/css" href="assets/css/voteonline-dashboard.css?v2.1.2" rel="stylesheet">
 </head>
 
 <body>
 
-  <?php require_once'../components/leftnav.php'; ?>
+  <?php require_once'components/leftnav.php'; ?>
 
   <!-- Left Navbar -->
   <div class="main-content">
   <!-- Left Top Navbar -->
 
     <!-- Top Navbar -->
-    <?php require_once'../components/topnav.php'; ?>
+    <?php require_once'components/topnav.php'; ?>
     <!-- End Top Navbar -->
 
     <!-- Header -->
@@ -59,10 +59,10 @@
   </div>
   <!-- Argon Scripts -->
   <!-- Core -->
-  <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
-  <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Argon JS -->
-  <script src="../assets/js/argon-dashboard.js?v=1.0.0"></script>
+  <script src="assets/js/plugins/jquery/dist/jquery.min.js"></script>
+  <script src="assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Voteonline JS -->
+  <script src="assets/js/argon-dashboard.js?v=1.0.0"></script>
 </body>
 
 </html>

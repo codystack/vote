@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href="./index.html">
+      <a class="navbar-brand pt-0" href="\">
         <img src="https://i.imgur.com/FcIx9F7.png" class="navbar-brand-img" alt="Voteonline Logo">
       </a>
       <!-- User -->
@@ -102,35 +102,35 @@
               <i class="ni ni-single-02 text-blue"></i> Contestants
             </a>
             <div class="dropdown-menu" aria-labelledby="contestantsDropdown">
-              <a class="dropdown-item" href="contestants">Add contestants</a>
-              <a class="dropdown-item" href="#">View contestants</a>
+              <a class="dropdown-item" href="add-contestants">Add contestants</a>
+              <a class="dropdown-item" href="view-contestants">View contestants</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Trash</a>
+              <a class="dropdown-item" href="trash">Trash</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./examples/maps.html">
-              <i class="ni ni-pin-3 text-blue"></i> Maps
+            <a class="nav-link " href="">
+              <i class="ni ni-box-2 text-blue"></i> Votes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./examples/profile.html">
-              <i class="ni ni-single-02 text-blue"></i> User profile
+            <a class="nav-link " href="">
+              <i class="ni ni-money-coins text-blue"></i> Payments
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="./examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-blue"></i> Tables
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="setDropdown" role="button" data-toggle="dropdown">
+              <i class="ni ni-settings text-blue"></i> Settings
             </a>
+            <div class="dropdown-menu" aria-labelledby="setDropdown">
+              <a class="dropdown-item" href="add-contestants">Add contestants</a>
+              <a class="dropdown-item" href="view-contestants">View contestants</a>
+              <a class="dropdown-item" href="trash">Open/Close voting</a>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./examples/login.html">
-              <i class="ni ni-key-25 text-blue"></i> Login
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./examples/register.html">
-              <i class="ni ni-circle-08 text-blue"></i> Register
+            <a class="nav-link " href="voting-status">
+              <i class="ni ni-button-power text-blue"></i> Voting status
             </a>
           </li>
         </ul>
@@ -141,7 +141,7 @@
         <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="docs/documentation">
+            <a class="nav-link" href="documentation">
               <i class="ni ni-spaceship"></i> Getting started
             </a>
           </li>

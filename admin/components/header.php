@@ -12,7 +12,7 @@
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-traffic-light"></i>
                       </div>
                     </div>
                   </div>
@@ -29,7 +29,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Revenue</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Revenue Generated</h5>
                       <span class="h2 font-weight-bold mb-0">₦2,356</span>
                     </div>
                     <div class="col-auto">
@@ -73,12 +73,12 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                      <span class="h2 font-weight-bold mb-0">49,65%</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total votes</h5>
+                      <span class="h2 font-weight-bold mb-0">49,655</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                        <i class="fas fa-percent"></i>
+                        <i class="fas fa-chart-bar"></i>
                       </div>
                     </div>
                   </div>
