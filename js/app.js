@@ -36,7 +36,7 @@ $('#contestant').append("<div class=\"wrapper\">\n" +
     "<p>Select or input number of votes</p>\n" +
     "\n" +
     "<div style=\"text-align: center;\">\n" +
-    "<div class=\"input-group mba\">\n" +
+    "<div class=\"input-group mba mb-4\">\n" +
     "<div class=\"input-group-prepend\">\n" +
     "<label class=\"input-group-text\">Vote(s)</label>\n" +
     "<input id=\"display\" type=\"text\" class=\"px-3\" value='1' disabled>\n" +
@@ -47,7 +47,7 @@ $('#contestant').append("<div class=\"wrapper\">\n" +
     "</div>\n" +
     "</div>\n" +
     "<!-- The amount should increse when the numbers go up and vice versa -->\n" +
-    "<h4>Amount: &#8358;<span id=\"total-amount\"></span></h4>\n" +
+    "<h4 style=\"color: #0a0c0d; margin-bottom: 1rem;\">Amount: &#8358;<span id=\"total-amount\"></span></h4>\n" +
     "\n" +
     "<p>Please note that each vote cost ₦50 and,<br> a minimum of 5 votes is required.\n" +
     "</p>\n" +
@@ -61,7 +61,7 @@ $('#contestant').append("<div class=\"wrapper\">\n" +
     "<section>\n" +
     "<div class=\"inner\">\n" +
     "<div class=\"image-holder\">\n" +
-    "<img src=\"images/form-wizard-1.jpg\" alt=\"\">\n" +
+    "<img class=\"constant-img\" src=\"https://i.imgur.com/b2ZMlsd.jpg\" alt=\"\" height=\"521\">\n" +
     "</div>\n" +
     "<div class=\"form-content\">\n" +
     "<div class=\"form-header\">\n" +
@@ -88,7 +88,7 @@ $('#contestant').append("<div class=\"wrapper\">\n" +
     "<section>\n" +
     "<div class=\"inner\">\n" +
     "<div class=\"image-holder\">\n" +
-    "<img src=\"images/form-wizard-1.jpg\" alt=\"\">\n" +
+    "<img class=\"constant-img\" src=\"https://i.imgur.com/b2ZMlsd.jpg\" alt=\"\" height=\"521\">\n" +
     "</div>\n" +
     "<div class=\"form-content\">\n" +
     "<div class=\"form-header\">\n" +
@@ -125,7 +125,7 @@ $('#contestant').append("<div class=\"wrapper\">\n" +
     "<section>\n" +
     "<div class=\"inner\">\n" +
     "<div class=\"image-holder\">\n" +
-    "<img src=\"images/form-wizard-1.jpg\" alt=\"\">\n" +
+    "<img class=\"constant-img\" src=\"https://i.imgur.com/b2ZMlsd.jpg\" alt=\"\" height=\"521\">\n" +
     "</div>\n" +
     "<div class=\"form-content\">\n" +
     "<div class=\"form-header\">\n" +
@@ -157,6 +157,7 @@ let total = 50;
 // total-payment
 
 const amount = document.getElementById("total-amount");
+const paymentAmount = document.getElementById("total-payment");
 
 function incNumber() {
     if (i < 10) {
@@ -180,4 +181,5 @@ function decNumber() {
     document.getElementById("total-payment").innerHTML = total * i;
 }
 amount.innerText = total;
+paymentAmount.innerText = total;
 // amount_to_pay = amount.innerText;
