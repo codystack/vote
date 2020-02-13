@@ -17,7 +17,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-    Contestants :: Vote Online&trade;
+    View contestants :: Vote Online&trade;
   </title>
   <!-- Favicon -->
   <link href="https://i.imgur.com/kVguEsz.png" rel="icon" type="image/png">

@@ -108,23 +108,33 @@
               <a class="dropdown-item" href="trash">Trash</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="paymentsDropdown" role="button" data-toggle="dropdown">
               <i class="ni ni-box-2 text-blue"></i> Votes
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="">
-              <i class="ni ni-money-coins text-blue"></i> Payments
-            </a>
+            <div class="dropdown-menu" aria-labelledby="voteDropdown">
+              <a class="dropdown-item" href="payment-gateway">Payment gateway</a>
+              <a class="dropdown-item" href="verify-payment">Verify payment</a>
+              <a class="dropdown-item" href="bank-details">Bank details</a>
+            </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="setDropdown" role="button" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="paymentsDropdown" role="button" data-toggle="dropdown">
+              <i class="ni ni-money-coins text-blue"></i> Payments
+            </a>
+            <div class="dropdown-menu" aria-labelledby="paymentsDropdown">
+              <a class="dropdown-item" href="payment-gateway">Payment gateway</a>
+              <a class="dropdown-item" href="verify-payment">Verify payment</a>
+              <a class="dropdown-item" href="bank-details">Bank details</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="settingsDropdown" role="button" data-toggle="dropdown">
               <i class="ni ni-settings text-blue"></i> Settings
             </a>
-            <div class="dropdown-menu" aria-labelledby="setDropdown">
-              <a class="dropdown-item" href="add-contestants">Add contestants</a>
-              <a class="dropdown-item" href="view-contestants">View contestants</a>
+            <div class="dropdown-menu" aria-labelledby="settingsDropdown">
+              <a class="dropdown-item" href="add-contestants">Add admin</a>
+              <a class="dropdown-item" href="view-contestants">View admin</a>
               <a class="dropdown-item" href="trash">Open/Close voting</a>
             </div>
           </li>
