@@ -1,4 +1,16 @@
-<!doctype html>
+<!--
+
+=========================================================
+* Vote Online Dashboard - v2.1.2
+========================================================
+
+* Product Page: https://www.voteonline.com.ng
+* Copyright 2020 WebifyNG (https://www.webify.com.ng)
+
+=========================================================
+ -->
+ 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Vote Online&trade; :: Nigeria's 1st Online voting platform</title>

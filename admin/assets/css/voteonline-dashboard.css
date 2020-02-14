@@ -20678,7 +20678,6 @@ pre>code.highlight {
     background-color: #fff;
     border-radius: 6px;
     padding-top: 50px;
-    padding-bottom: 50px;
 }
 
 .col.paymentgateway1 {
@@ -20728,7 +20727,6 @@ img.paymentgateway {
 
 .pseudotrigger {
   display: flex;
-  padding-bottom: 20px;
   align-items: center;
 }
 
@@ -20766,5 +20764,16 @@ button.btn.btn-icon.btn-3.btn-danger.verifypayment {
 
 button.btn.btn-icon.btn-3.btn-info.verifypayment {
     margin-top: 15px;
+}
+
+.card-header.border-0.addcontestants {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+img.expired {
+    padding-bottom: 30px;
 }
 /*# sourceMappingURL=dashboard-free.css.map */

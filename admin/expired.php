@@ -48,81 +48,100 @@
       <!-- Verify Payment -->
       <div class="row">
         <div class="col expired">
-          <center><img class="expired" src="https://i.imgur.com/a5dFDRc.png" style="width: 150px;"></center>
+          <center>
+            <img class="expired" src="https://i.imgur.com/a5dFDRc.png" style="width: 150px;">
+            <h1>Your Vote Online license has expired</h1>
+            <p>Enter your license key to activate license and update to new features.</p>
+          </center>
           <form>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  
-
-                  <div class="container">
-                      <div class="card">
-                    <div class="card-header">
-                    Payment date:
-                    <strong>01/01/01/2018</strong> 
-                      <span class="float-right"> <strong>Status:</strong> Pending</span>
-
-                    </div>
-                    <div class="card-body">
-                    <div class="row mb-4">
-                    <div class="col-sm-6">
-                    <h6 class="mb-3">For:</h6>
-                    <div>
-                    <strong>AC01</strong>
-                    </div>
-                    </div>
-
-                    </div>
-
-                    <div class="table-responsive-sm">
-                    <table class="table table-striped">
-                    <thead>
-                    <tr>
-                    <th>Bank</th>
-                    <th>Account Name</th>
-
-                    <th class="right">Account Number</th>
-                      <th class="center">Amount</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    <td class="left strong">Zenith Bank</td>
-                    <td class="left">Okoro ThankGod</td>
-
-                    <td class="right">2178005104</td>
-                      <td class="center">₦2,500.00</td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    </div>
-                    <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-
-                    </div>
-
-
-                    <div class="col-lg-4 col-sm-5 ml-auto verifypayment">
-                      <button class="btn btn-icon btn-3 btn-info verifypayment" type="button">
-                      <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
-                        <span class="btn-inner--text">Approve</span>
-                    </button>
-
-                    <button class="btn btn-icon btn-3 btn-danger verifypayment" type="button">
-                      <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
-                        <span class="btn-inner--text">Delete</span>
-                    </button>
-                    </div>
-
-                    </div>
-
-                    </div>
-                    </div>
-                    </div>
-
+                  <input type="text" class="form-control" id="contestantName" placeholder="Enter your license key Ex: VO25gdwHkdVM4628fgdVD3630">
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <center>
+                      <button class="btn btn-icon btn-3 btn-info verifypayment" type="button" data-toggle="modal" data-target="#modal-form">
+                      <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+                        <span class="btn-inner--text">Activate account</span>
+                    </button>
+
+                    <!-- Modal -->
+
+                    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                          <div class="modal-content">
+                            
+                              <div class="modal-body p-0">
+                                
+                                    
+                  <div class="card bg-secondary shadow border-0">
+                      <div class="card-header bg-transparent pb-5">
+                          <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
+                          <div class="btn-wrapper text-center">
+                              <a href="#" class="btn btn-neutral btn-icon">
+                                  <span class="btn-inner--icon"><img src="../../assets/img/icons/common/github.svg"></span>
+                                  <span class="btn-inner--text">Github</span>
+                              </a>
+                              <a href="#" class="btn btn-neutral btn-icon">
+                                  <span class="btn-inner--icon"><img src="../../assets/img/icons/common/google.svg"></span>
+                                  <span class="btn-inner--text">Google</span>
+                              </a>
+                          </div>
+                      </div>
+                      <div class="card-body px-lg-5 py-lg-5">
+                          <div class="text-center text-muted mb-4">
+                              <small>Or sign in with credentials</small>
+                          </div>
+                          <form role="form">
+                              <div class="form-group mb-3">
+                                  <div class="input-group input-group-alternative">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                      </div>
+                                      <input class="form-control" placeholder="Email" type="email">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="input-group input-group-alternative">
+                                      <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                      </div>
+                                      <input class="form-control" placeholder="Password" type="password">
+                                  </div>
+                              </div>
+                              <div class="custom-control custom-control-alternative custom-checkbox">
+                                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                                  <label class="custom-control-label" for=" customCheckLogin">
+                                      <span class="text-muted">Remember me</span>
+                                  </label>
+                              </div>
+                              <div class="text-center">
+                                  <button type="button" class="btn btn-primary my-4">Sign in</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+                    </div>
+
+                    <!-- End Modal -->
+
+                    <button class="btn btn-icon btn-3 btn-danger verifypayment" type="button">
+                      <span class="btn-inner--icon"><i class="ni ni-credit-card"></i></span>
+                        <span class="btn-inner--text">Pay for license</span>
+                    </button>
+                  </center>
+                </div>
+                </div>
+              </div>
             </div>
           </form>
         </div>
