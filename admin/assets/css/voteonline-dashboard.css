@@ -20680,6 +20680,14 @@ pre>code.highlight {
     padding-top: 50px;
 }
 
+.col.addadmin {
+    background-color: #fff;
+    border-radius: 6px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
 .col.paymentgateway1 {
     background-color: #fff;
     border-radius: 6px;

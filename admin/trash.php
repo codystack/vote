@@ -1,46 +1,7 @@
-<!--
-
-=========================================================
-* Vote Online Dashboard - v2.1.2
-========================================================
-
-* Product Page: https://www.voteonline.com.ng
-* Copyright 2020 WebifyNG (https://www.webify.com.ng)
-
-========================================================= 
--->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>
-    Trash :: Vote Online&trade;
-  </title>
-  <!-- Favicon -->
-  <link href="https://i.imgur.com/kVguEsz.png" rel="icon" type="image/png">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <!-- Icons -->
-  <link href="assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
-  <link href="assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link href="assets/css/voteonline-dashboard.css?v2.1.2" rel="stylesheet" />
-</head>
-
-<body class="">
-  <?php require_once'components/leftnav.php'; ?>
-
-  <!-- Left Navbar -->
-  <div class="main-content">
-  <!-- Left Top Navbar -->
-
-    <!-- Top Navbar -->
-    <?php require_once'components/topnav.php'; ?>
-    <!-- End Top Navbar -->
-
+<?php
+require ('./components/header.php');
+require_once'./components/navbar.php'; 
+?>
     <!-- Header -->
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
      <div class="container-fluid">
@@ -52,7 +13,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="mb-0">Trashed Contestants</h3>
+              <h3 class="mb-0">Trash</h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
@@ -61,7 +22,7 @@
                     <th scope="col">Contestants</th>
                     <th scope="col">No. of vote</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Vote percentage</th>
+                    <th scope="col">Pseudo code</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -70,51 +31,10 @@
                     <th scope="row">
                       <div class="media align-items-center">
                         <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="https://i.imgur.com/ORfTtgL.jpg">
-                        </a>
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">Angela Smith</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td>
-                      150
-                    </td>
-                    <td>
-                      <span class="badge badge-dot mr-4">
-                        <i class="bg-danger"></i> trashed
-                      </span>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">60%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#"><i class="fas fa-recycle"></i>Recycle</a>
-                          <a class="dropdown-item" href="#"><i class="fas fa-user-slash"></i>Delete permanently</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
                           <img alt="Image placeholder" src="https://i.imgur.com/n1d2JNC.jpg">
                         </a>
                         <div class="media-body">
-                          <span class="mb-0 text-sm">Jane Frank</span>
+                          <span class="mb-0 text-sm">Queen Ken</span>
                         </div>
                       </div>
                     </th>
@@ -123,234 +43,23 @@
                     </td>
                     <td>
                       <span class="badge badge-dot">
-                        <i class="bg-danger"></i> trashed
+                        <i class="bg-success"></i> approved
                       </span>
                     </td>
                     <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">100%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#"><i class="fas fa-recycle"></i>Recycle</a>
-                          <a class="dropdown-item" href="#"><i class="fas fa-user-slash"></i>Delete permanently</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                  <th scope="row">
-                      <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="https://i.imgur.com/ORfTtgL.jpg">
-                        </a>
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">Queen Ken</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td>
-                      2,500
+                      AD65
                     </td>
                     <td>
-                      <span class="badge badge-dot mr-4">
-                        <i class="bg-danger"></i> trashed
-                      </span>
+                     <button class="btn btn-icon btn-3 btn-info" type="button" data-toggle="modal" data-target="#modal-form">
+                      <span class="btn-inner--icon"><i class="ni ni-curved-next"></i></span>
+                        <span class="btn-inner--text">Restore</span>
+                    </button>
+
+                    <button class="btn btn-icon btn-3 btn-danger" type="button">
+                      <span class="btn-inner--icon"><i class="ni ni-archive-2"></i></span>
+                        <span class="btn-inner--text">Delete</span>
+                    </button>
                     </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">60%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#"><i class="fas fa-recycle"></i>Recycle</a>
-                          <a class="dropdown-item" href="#"><i class="fas fa-user-slash"></i>Delete permanently</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="https://i.imgur.com/n1d2JNC.jpg">
-                        </a>
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">Leesibari pearl</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td>
-                      1,800
-                    </td>
-                    <td>
-                      <span class="badge badge-dot">
-                        <i class="bg-danger"></i> trashed
-                      </span>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">100%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#"><i class="fas fa-recycle"></i>Recycle</a>
-                          <a class="dropdown-item" href="#"><i class="fas fa-user-slash"></i>Delete permanently</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="https://i.imgur.com/ORfTtgL.jpg">
-                        </a>
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">Joy Samuel</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td>
-                      3,150
-                    </td>
-                    <td>
-                      <span class="badge badge-dot mr-4">
-                        <i class="bg-danger"></i> trashed
-                      </span>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">72%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#"><i class="fas fa-recycle"></i>Recycle</a>
-                          <a class="dropdown-item" href="#"><i class="fas fa-user-slash"></i>Delete permanently</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="https://i.imgur.com/n1d2JNC.jpg">
-                        </a>
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">Gift Okon</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td>
-                      4,400
-                    </td>
-                    <td>
-                      <span class="badge badge-dot">
-                        <i class="bg-danger"></i> trashed
-                      </span>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">90%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#"><i class="fas fa-recycle"></i>Recycle</a>
-                          <a class="dropdown-item" href="#"><i class="fas fa-user-slash"></i>Delete permanently</a>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="https://i.imgur.com/ORfTtgL.jpg">
-                        </a>
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">Emem Samuel</span>
-                        </div>
-                      </div>
-                    </th>
-                    <td>
-                      2,200
-                    </td>
-                    <td>
-                      <span class="badge badge-dot mr-4">
-                        <i class="bg-danger"></i> trashed
-                      </span>
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">100%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#"><i class="fas fa-recycle"></i>Recycle</a>
-                          <a class="dropdown-item" href="#"><i class="fas fa-user-slash"></i>Delete permanently</a>
-                        </div>
-                      </div>
                     </td>
                   </tr>
                 </tbody>
@@ -386,17 +95,5 @@
       </div>
       
       <!-- Footer -->
-      <?php require_once'components/footer.php'; ?>
+      <?php require('./components/footer.php'); ?>
       <!-- End Footer -->
-    </div>
-  </div>
-  <!--   Core   -->
-  <script src="assets/js/plugins/jquery/dist/jquery.min.js"></script>
-  <script src="assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <!--   Optional JS   -->
-  <!--   Voteonline JS   -->
-  <script src="assets/js/voteonline-dashboard.min.js?v=1.1.2"></script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-</body>
-
-</html>

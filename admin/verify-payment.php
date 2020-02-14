@@ -98,3 +98,4 @@ require_once'./components/navbar.php';
         <!-- Footer -->
        <?php require('./components/footer.php'); ?>
         <!-- End Footer -->
+  

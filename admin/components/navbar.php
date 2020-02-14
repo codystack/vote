@@ -129,9 +129,9 @@
               <i class="ni ni-settings text-blue"></i> Settings
             </a>
             <div class="dropdown-menu" aria-labelledby="settingsDropdown">
-              <a class="dropdown-item" href="add-contestants">Add admin</a>
+              <a class="dropdown-item" href="admin">Admin</a>
               <a class="dropdown-item" href="view-contestants">View admin</a>
-              <a class="dropdown-item" href="trash">Open/Close voting</a>
+              <a class="dropdown-item" href="theme">Theme</a>
             </div>
           </li>
           <li class="nav-item">

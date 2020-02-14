@@ -3,7 +3,9 @@ require ('./components/header.php');
 require_once'./components/navbar.php'; 
 ?>
 
-  <!-- Header -->
+
+
+	<!-- Header -->
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
      <div class="container-fluid">
       </div>
@@ -14,19 +16,10 @@ require_once'./components/navbar.php';
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0 ">
-              <div class="col">
-                <h3 class="mb-0">List of Contestants</h3>
-              </div>
-              <div class="col addcontestants">
-                <div class="pseudotrigger">
-                    <h4>Turn on/off pseudo code</h4>
-                      <label class="custom-toggle">
-                        <input type="checkbox">
-                         <span class="custom-toggle-slider rounded-circle"></span>
-                      </label>
-                  </div>
+              <div class="col addadmin">
+                <h3 class="mb-0">List of Admin</h3>
                 <button class="btn btn-icon btn-3 btn-info" type="button" data-toggle="modal" data-target="#addContestants">
-                  <span class="btn-inner--text">Add contestant</span>
+                  <span class="btn-inner--text">Add admin</span>
                 </button>
               </div>
               
@@ -158,7 +151,43 @@ require_once'./components/navbar.php';
           </div>
         </div>
       </div>
-      
-      <!-- Footer -->
-      <?php require('./components/footer.php'); ?>
-      <!-- End Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+ <?php require('./components/footer.php'); ?>
+<!-- End Footer -->
