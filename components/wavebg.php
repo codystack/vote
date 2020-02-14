@@ -7,12 +7,19 @@
     <?php require ('search.php'); ?>
     <div class="container-xl">
         <div class="row">
-                <?php
 
-                for ($x = 0; $x <= 4; $x++) {
+            <?php
+
+            $sql = "SELECT * FROM contestants order by id DESC";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result)) {
                     include ('card.php');
                 }
-                ?>
+            }
+
+            ?>
         </div>
     </div>
 

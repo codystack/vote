@@ -1,387 +1,110 @@
 <?php
-require ('./components/header.php');
-require_once'./components/navbar.php'; 
-?>
+require_once ("../config/db.php");
+require_once ("../controller/auth_controller.php");
 
+if (!isset($_SESSION['admin_session'])){
 
-    <!-- Header -->
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-     
-      <div class="container-fluid">
-        <div class="header-body">
-          <!-- Card stats -->
-          <div class="row">
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                      <span class="h2 font-weight-bold mb-0">350,897</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i class="fas fa-traffic-light"></i>
+    if (isset($_GET['username_error']) && $_GET['username_error'] === 'Enter your admin username'){
+        $invalid_username = "is-invalid";
+        $invalid_username_Msg = "<div class=\"invalid-feedback\">".$_GET['username_error']."</div>";
+    }
+    if (isset($_GET['password_error']) && $_GET['password_error'] === 'Enter the correct admin password'){
+        $invalid_password = "is-invalid";
+        $invalid_password_Msg = "<div class=\"invalid-feedback\">".$_GET['password_error']."</div>";
+    }
+    if (isset($_GET['no_account']) && $_GET['no_account'] === 'You do not have access to this portal!'){
+        $invalid_username = "is-invalid";
+        $invalid_password = "is-invalid";
+        $invalid_entry_Msg = "<small class=\"invalid-feedback d-block\">".$_GET['no_account']."</small>";
+    }
+
+    echo '
+        <!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <title>
+            Register :: Vote Online&trade;
+          </title>
+          <!-- Favicon -->
+          <link href="https://i.imgur.com/kVguEsz.png" rel="icon" type="image/png">
+          <!-- Fonts -->
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+          <!-- Icons -->
+          <link href="assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
+          <link href="assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+          <!-- CSS Files -->
+          <link href="assets/css/voteonline-dashboard.css?v=1.1.2" rel="stylesheet" />
+        </head>
+        
+        <body class="bg-default">
+          <div class="main-content">
+            <div class="header bg-gradient-primary py-7 py-lg-8">
+              <div class="separator separator-bottom separator-skew zindex-100">
+                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                  <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+                </svg>
+              </div>
+            </div>
+            <!-- Page content -->
+            <div class="container mt--8 pb-5 mt-lg-5">
+              <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                  <div class="card bg-secondary shadow border-0">
+            
+                    <div class="card-body px-lg-5 py-lg-5">
+                      <div class="text-center text-muted mb-4">
+                        Admin Portal
                       </div>
+                      '.$invalid_entry_Msg.'
+                      <form role="form" action="'.htmlspecialchars($_SERVER["PHP_SELF"]).'" method="POST">
+                        <div class="form-group mb-3">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                            </div>
+                            <input class="form-control '.$invalid_username.'" placeholder="Username" type="username" name="username">
+                            '.$invalid_username_Msg.'
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                            </div>
+                            <input class="form-control '.$invalid_password.'" placeholder="Password" type="password" name="password">
+                            '.$invalid_password_Msg.'
+                          </div>
+                        </div>
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-primary my-4" name="admin_login_btn">Secure Login</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                  <!--
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>-->
                 </div>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Revenue Generated</h5>
-                      <span class="h2 font-weight-bold mb-0">₦2,356</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                        <i class="fas fa-chart-pie"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <!--
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last week</span>
-                  </p>-->
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Contestants</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <!--
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                    <span class="text-nowrap">Since yesterday</span>
-                  </p>-->
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total votes</h5>
-                      <span class="h2 font-weight-bold mb-0">49,655</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                        <i class="fas fa-chart-bar"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <!--
-                  <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid mt--7">
-      <div class="row">
-        <div class="col-xl-8 mb-5 mb-xl-0">
-          <div class="card bg-gradient-default shadow">
-            <div class="card-header bg-transparent">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-                  <h2 class="text-white mb-0">Revenue value</h2>
-                </div>
-                <div class="col">
-                  <ul class="nav nav-pills justify-content-end">
-                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="₦" data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                        <span class="d-none d-md-block">Month</span>
-                        <span class="d-md-none">M</span>
-                      </a>
-                    </li>
-                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="₦" data-suffix="k">
-                      <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                        <span class="d-none d-md-block">Week</span>
-                        <span class="d-md-none">W</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <!-- Chart -->
-              <div class="chart">
-                <!-- Chart wrapper -->
-                <canvas id="chart-sales" class="chart-canvas"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4">
-          <div class="card shadow">
-            <div class="card-header bg-transparent">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                  <h2 class="mb-0">Total votes</h2>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <!-- Chart -->
-              <div class="chart">
-                <canvas id="chart-orders" class="chart-canvas"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-xl-8 mb-5 mb-xl-0">
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">Top 5 Contestants</h3>
-                </div>
-                <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
-                </div>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Contestant name</th>
-                    <th scope="col">No. of votes</th>
-                    <th scope="col">No. of voters</th>
-                    <th scope="col">Percentage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      Queen King
-                    </th>
-                    <td>
-                      4,569
-                    </td>
-                    <td>
-                      340
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Juliet Nelson
-                    </th>
-                    <td>
-                      3,985
-                    </td>
-                    <td>
-                      319
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Mary Henry
-                    </th>
-                    <td>
-                      3,513
-                    </td>
-                    <td>
-                      294
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Jane Dennis
-                    </th>
-                    <td>
-                      2,050
-                    </td>
-                    <td>
-                      147
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Clare Kelvin
-                    </th>
-                    <td>
-                      1,795
-                    </td>
-                    <td>
-                      190
-                    </td>
-                    <td>
-                      <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4">
-          <div class="card shadow">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">Visitors traffic</h3>
-                </div>
-                <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
-                </div>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <!-- Projects table -->
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Referral</th>
-                    <th scope="col">Visitors</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      Facebook
-                    </th>
-                    <td>
-                      1,480
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">60%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Yahoo
-                    </th>
-                    <td>
-                      5,480
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">70%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Google
-                    </th>
-                    <td>
-                      4,807
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">80%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      Instagram
-                    </th>
-                    <td>
-                      3,678
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">75%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      twitter
-                    </th>
-                    <td>
-                      2,645
-                    </td>
-                    <td>
-                      <div class="d-flex align-items-center">
-                        <span class="mr-2">30%</span>
-                        <div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Footer -->
-      <?php require ('./components/footer.php'); ?>
-      <!-- Footer -->
     
+    
+    <footer class="py-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-xl-between">
+          <div class="col-xl-6">
+            <div class="copyright text-center text-xl-left text-muted">
+              <p>&copy; <script>document.write(new Date().getFullYear());</script>
+              All Rights Reserved  by <a href="https://www.voteonline.com.ng" style="text-decoration: none;" target="_blank">Vote Online&trade;</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+    ';
+} else {
+    header("Location: dashboard");
+}
+?>

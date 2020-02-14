@@ -29,6 +29,14 @@
   <!--   voteonline JS   -->
   <script src="./assets/js/voteonline-dashboard.min.js?v=1.1.2"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./assets/js/custom.js"></script>
 
+<script>
+    if (queryParameters().editid){
+        $('#editContestantsModal').modal('show');
+        document.write('<?php createeditid();?>');
+    }
+</script>
+</body>
 </html>

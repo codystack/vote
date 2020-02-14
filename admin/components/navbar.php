@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
     <div class="container-fluid">
       <!-- Toggler -->
@@ -12,19 +10,7 @@
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
-        <!--
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="ni ni-bell-55"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        -->
+
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
@@ -158,11 +144,16 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item active active-pro">
-            <a class="nav-link" href="https://voteonline.com.ng" target="_blank">
+          <li class="nav-item">
+            <a class="nav-link" href="https://voteonline.com.ng/help" target="_blank">
               <i class="ni ni-headphones text-dark"></i> Contact Support
             </a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?logout=true" target="_blank">
+                    <i class="ni ni-watch-time text-dark"></i> Logout
+                </a>
+            </li>
         </ul>
       </div>
     </div>
@@ -178,19 +169,6 @@
       <div class="container-fluid">
         <!-- Brand -->
         <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
-        <!-- Form -->
-        <!--
-        <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-          <div class="form-group mb-0">
-            <div class="input-group input-group-alternative">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-search"></i></span>
-              </div>
-              <input class="form-control" placeholder="Search" type="text">
-            </div>
-          </div>
-        </form>
-        -->
         <!-- User -->
         <ul class="navbar-nav align-items-center d-none d-md-flex">
           <li class="nav-item dropdown">
@@ -200,7 +178,7 @@
                   <img alt="Image placeholder" src="https://i.imgur.com/n1d2JNC.jpg">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
+                  <span class="mb-0 text-sm  font-weight-bold"><?php echo $_SESSION['username']?></span>
                 </div>
               </div>
             </a>

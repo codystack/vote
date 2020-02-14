@@ -1,15 +1,7 @@
-<!--
-
-=========================================================
-* Vote Online Dashboard - v2.1.2
-========================================================
-
-* Product Page: https://www.voteonline.com.ng
-* Copyright 2020 WebifyNG (https://www.webify.com.ng)
-
-=========================================================
- -->
- 
+<?php
+require_once ('config/db.php');
+require_once ('controller/auth_controller.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
