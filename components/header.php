@@ -1,3 +1,7 @@
+<?php
+require_once ('config/db.php');
+require_once ('controller/auth_controller.php');
+?>
 <!doctype html>
 <html lang="en">
 <head>

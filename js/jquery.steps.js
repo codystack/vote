@@ -1932,7 +1932,9 @@ var defaults = $.fn.steps.defaults = {
      * @default function (event, currentIndex) { }
      * @for defaults
      **/
-    onFinished: function (event, currentIndex) { },
+    onFinished: function (event, currentIndex) {
+        alert("DONE!");
+    },
 
     /**
      * Fires after async content is loaded. 
