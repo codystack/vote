@@ -2,7 +2,7 @@
 require_once ('config/db.php');
 require_once ('controller/auth_controller.php');
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Vote Online&trade; :: Nigeria's 1st Online voting platform</title>

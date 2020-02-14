@@ -17,3 +17,26 @@
           </div>
         </div>
       </footer>
+
+      </div>
+  </div>
+  <!--   Core   -->
+  <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!--   Optional JS   -->
+  <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+  <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
+  <!--   voteonline JS   -->
+  <script src="./assets/js/voteonline-dashboard.min.js?v=1.1.2"></script>
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./assets/js/custom.js"></script>
+
+<script>
+    if (queryParameters().editid){
+        $('#editContestantsModal').modal('show');
+        document.write('<?php createeditid();?>');
+    }
+</script>
+</body>
+</html>

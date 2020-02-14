@@ -17,6 +17,7 @@
 <!--<script src="js/extention/choices.js"></script>-->
 <script>
     // linear-gradient(10deg, rgb(222, 129, 62) 0%, rgb(222, 199, 85) 100%)
+
     // theme = new Theme("nigeriaQueen");
     // const button = document.querySelector('button');
     // const sButton = document.querySelector('button > .bubbly-button2');

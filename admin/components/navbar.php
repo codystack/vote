@@ -10,19 +10,7 @@
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
-        <!--
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="ni ni-bell-55"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        -->
+
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
@@ -97,36 +85,45 @@
               <i class="ni ni-align-left-2 text-blue"></i> Dashboard
             </a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="contestantsDropdown" role="button" data-toggle="dropdown">
+          <li class="nav-item">
+            <a class="nav-link" href="contestants">
               <i class="ni ni-single-02 text-blue"></i> Contestants
             </a>
-            <div class="dropdown-menu" aria-labelledby="contestantsDropdown">
-              <a class="dropdown-item" href="add-contestants">Add contestants</a>
-              <a class="dropdown-item" href="view-contestants">View contestants</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="trash">Trash</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="">
-              <i class="ni ni-box-2 text-blue"></i> Votes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="">
-              <i class="ni ni-money-coins text-blue"></i> Payments
-            </a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="setDropdown" role="button" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="paymentsDropdown" role="button" data-toggle="dropdown">
+              <i class="ni ni-box-2 text-blue"></i> Votes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="voteDropdown">
+              <a class="dropdown-item" href="payment-gateway">Payment gateway</a>
+              <a class="dropdown-item" href="verify-payment">Verify payment</a>
+              <a class="dropdown-item" href="bank-details">Bank details</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="paymentsDropdown" role="button" data-toggle="dropdown">
+              <i class="ni ni-money-coins text-blue"></i> Payments
+            </a>
+            <div class="dropdown-menu" aria-labelledby="paymentsDropdown">
+              <a class="dropdown-item" href="payment-gateway">Payment gateway</a>
+              <a class="dropdown-item" href="verify-payment">Verify payment</a>
+              <a class="dropdown-item" href="bank-details">Bank details</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="settingsDropdown" role="button" data-toggle="dropdown">
               <i class="ni ni-settings text-blue"></i> Settings
             </a>
-            <div class="dropdown-menu" aria-labelledby="setDropdown">
-              <a class="dropdown-item" href="add-contestants">Add contestants</a>
-              <a class="dropdown-item" href="view-contestants">View contestants</a>
-              <a class="dropdown-item" href="trash">Open/Close voting</a>
+            <div class="dropdown-menu" aria-labelledby="settingsDropdown">
+              <a class="dropdown-item" href="admin">Admin</a>
+              <a class="dropdown-item" href="view-contestants">View admin</a>
+              <a class="dropdown-item" href="theme">Theme</a>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="trash">
+              <i class="ni ni-archive-2 text-blue"></i> Trash
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="voting-status">
@@ -147,12 +144,72 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item active active-pro">
-            <a class="nav-link" href="https://voteonline.com.ng" target="_blank">
+          <li class="nav-item">
+            <a class="nav-link" href="https://voteonline.com.ng/help" target="_blank">
               <i class="ni ni-headphones text-dark"></i> Contact Support
             </a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?logout=true" target="_blank">
+                    <i class="ni ni-watch-time text-dark"></i> Logout
+                </a>
+            </li>
         </ul>
       </div>
     </div>
   </nav>
+
+
+  <!-- Left Navbar -->
+  <div class="main-content">
+  <!-- Left Top Navbar -->
+
+
+<nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+        <!-- User -->
+        <ul class="navbar-nav align-items-center d-none d-md-flex">
+          <li class="nav-item dropdown">
+            <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="media align-items-center">
+                <span class="avatar avatar-sm rounded-circle">
+                  <img alt="Image placeholder" src="https://i.imgur.com/n1d2JNC.jpg">
+                </span>
+                <div class="media-body ml-2 d-none d-lg-block">
+                  <span class="mb-0 text-sm  font-weight-bold"><?php echo $_SESSION['username']?></span>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+              <div class=" dropdown-header noti-title">
+                <h6 class="text-overflow m-0">Welcome!</h6>
+              </div>
+              <a href="./examples/profile.html" class="dropdown-item">
+                <i class="ni ni-single-02"></i>
+                <span>My profile</span>
+              </a>
+              <a href="./examples/profile.html" class="dropdown-item">
+                <i class="ni ni-settings-gear-65"></i>
+                <span>Settings</span>
+              </a>
+              <a href="./examples/profile.html" class="dropdown-item">
+                <i class="ni ni-calendar-grid-58"></i>
+                <span>Activity</span>
+              </a>
+              <a href="./examples/profile.html" class="dropdown-item">
+                <i class="ni ni-support-16"></i>
+                <span>Support</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#!" class="dropdown-item">
+                <i class="ni ni-user-run"></i>
+                <span>Logout</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Navbar -->

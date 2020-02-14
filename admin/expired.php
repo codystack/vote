@@ -17,7 +17,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-    Contestants :: Vote Online&trade;
+     Account suspended :: Vote Online&trade;
   </title>
   <!-- Favicon -->
   <link href="https://i.imgur.com/kVguEsz.png" rel="icon" type="image/png">
@@ -31,14 +31,12 @@
 </head>
 
 <body class="">
-  <?php require_once'components/leftnav.php'; ?>
 
   <!-- Left Navbar -->
   <div class="main-content">
   <!-- Left Top Navbar -->
 
     <!-- Top Navbar -->
-    <?php require_once'components/topnav.php'; ?>
     <!-- End Top Navbar -->
 
         <!-- Header -->
@@ -47,48 +45,48 @@
       </div>
     </div>
     <div class="container-fluid mt--7">
-      <!-- Table -->
+      <!-- Verify Payment -->
       <div class="row">
-        <div class="col addcontestants">
-          <div class="pseudotrigger">
-            <h4>Turn on/off pseudo code</h4>
-          <label class="custom-toggle">
-            <input type="checkbox">
-            <span class="custom-toggle-slider rounded-circle"></span>
-          </label>
-          </div>
+        <div class="col expired">
+          <center>
+            <img class="expired" src="https://i.imgur.com/a5dFDRc.png" style="width: 150px;">
+            <h1>Your Vote Online license has expired</h1>
+            <p>Enter your license key to activate license and update to new features.</p>
+          </center>
           <form>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="form-group">
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Contestant name">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input type="text" placeholder="Pseudo code" class="form-control" disabled />
+                  <input type="text" class="form-control" id="contestantName" placeholder="Enter your license key Ex: VO25gdwHkdVM4628fgdVD3630">
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="form-group">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                    <label class="custom-file-label" for="validatedCustomFile">Upload picture dimension <small>(1000px - 1000px)</small></label>
-                    <div class="invalid-feedback">Example invalid custom file feedback</div>
-                  </div>
+                  <center>
+                      <button class="btn btn-icon btn-3 btn-info verifypayment" type="button" data-toggle="modal" data-target="#modal-form">
+                      <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
+                        <span class="btn-inner--text">Activate account</span>
+                    </button>
+
+                    <button class="btn btn-icon btn-3 btn-danger verifypayment" type="button">
+                      <span class="btn-inner--icon"><i class="ni ni-credit-card"></i></span>
+                        <span class="btn-inner--text">Get license</span>
+                    </button>
+                  </center>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <button type="button" class="btn btn-info">Add Contestant</button>
                 </div>
               </div>
             </div>
           </form>
         </div>
+
+      <!-- End Verify Payment -->
+
+
         <!-- Footer -->
-      
+       
         <!-- End Footer -->
       </div>
 
