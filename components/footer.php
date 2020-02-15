@@ -270,6 +270,21 @@
             }
         }
     }
+
+
+    if(window.matchMedia('(min-width:320px) and (max-width: 768px)').matches)
+    {
+        $(".s130").css("padding", "15px !important");
+        $("div#contestantCards").css('margin', '0px');
+        $(".music-card").css("height", "480px");
+        $(".content.flex").css("padding", "20px");
+
+        // for paycard
+        $(".d-inline-flex").css('display','block !important');
+        $(".constant-img").css('height','auto !important');
+        $(".input-group-append, .input-group-prepend").css('display', 'grid !important');
+        $(".payinput").addClass('col-12');
+    }
 </script>
 </body>
 </html>
