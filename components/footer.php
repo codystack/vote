@@ -25,5 +25,6 @@
     // theme.buttons(button, black);
     // theme.specialButtons(sButton, black);
 </script>
+<script src="js/search.js"></script>
 </body>
 </html>
