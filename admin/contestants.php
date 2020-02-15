@@ -181,9 +181,9 @@ if (isset($_GET['editid'])){
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+
                             <?php
-                            $sql = "SELECT * FROM contestants order by id DESC";
+                            $sql = "SELECT * FROM contestants order by scores DESC";
                             $result = mysqli_query($conn, $sql);
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
@@ -194,6 +194,7 @@ if (isset($_GET['editid'])){
                                         $status = "<span class='badge badge-dot'><i class='bg-success'></i> Deleted</span>";
                                     }
                                     echo "
+                                    <tr>
                                     <th scope='row'>
                                         <div class='media align-items-center'>
                                             <a href='#' class='avatar rounded-circle mr-3'><img alt='Image placeholder' src='./uploads/".$row['image']."'></a>
@@ -218,12 +219,13 @@ if (isset($_GET['editid'])){
                                         </button>
                                     ";
                                     echo "</td>";
+                                    echo "</tr>";
                                 }
                             }else {
                                 echo "<td><p>You have 0 Contestant!</p></td>";
                             }
                             ?>
-                        </tr>
+
                         </tbody>
                     </table>
                 </div>

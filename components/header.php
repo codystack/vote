@@ -35,5 +35,6 @@ require_once ('controller/auth_controller.php');
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://i.imgur.com/kVguEsz.png" rel="icon" type="image/png">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>

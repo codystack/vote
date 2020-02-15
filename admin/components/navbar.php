@@ -81,7 +81,7 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item  active ">
-            <a class="nav-link  active " href="\">
+            <a class="nav-link  active " href="index">
               <i class="ni ni-align-left-2 text-blue"></i> Dashboard
             </a>
           </li>

@@ -2,100 +2,121 @@
 require ('./components/header.php');
 require_once'./components/navbar.php'; 
 ?>
-
-
-    <!-- Header -->
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-     <div class="container-fluid">
-      </div>
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
     </div>
-    <div class="container-fluid mt--7">
-      <!-- Verify Payment -->
-      <div class="row">
+</div>
+<div class="container-fluid mt--7">
+
+    <div class="row">
         <div class="col paymentgateway1">
-          <center><img class="paymentgateway" src="https://i.imgur.com/yyDfFdU.png" style="width: 150px;"></center>
-          <form>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  
-
-                  <div class="container">
-                      <div class="card">
-                    <div class="card-header">
-                    Payment date:
-                    <strong>01/01/01/2018</strong> 
-                      <span class="float-right"> <strong>Status:</strong> Pending</span>
-
+            <div style="text-align: center;"><img class="paymentgateway" src="https://i.imgur.com/yyDfFdU.png" style="width: 150px;"></div>
+            <form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="container">
+                                <?php
+                            $sql = "SELECT * FROM bankdetails order by paymentdate DESC";
+                            $result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($result) > 0) {
+                                // output data of each row
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    if ($row['status'] > 0) {
+                                        $status = "<span class='text-success'>Approved</span>";
+                                    } else {
+                                        $status = "<span class='text-danger'>Pending</span>";
+                                    }
+                                    echo "<div class=\"card mb-lg-4\">";
+                                    echo "<div class=\"card-header\">Payment date: <strong>".date('F/j/Y',strtotime($row['paymentdate']))."</strong>";
+                                    echo "<span class=\"float-right\"> <strong>Status:</strong> ".$status."</span>";
+                                    echo "</div>";
+                                    echo "<div class=\"card-body\">";
+                                    echo "<div class=\"row mb-4\">";
+                                    echo "<div class=\"col-sm-6\">";
+                                    echo "<h6 class=\"mb-3\">For:</h6>";
+                                    echo "<div><strong>".strtoupper($row["contestantCode"])."</strong></div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "<div class=\"table-responsive-sm\">";
+                                    echo "<table class=\"table table-striped\">";
+                                    echo "<thead>";
+                                    echo "<tr>";
+                                    echo "<th>Bank</th>";
+                                    echo "<th>Account Name</th>";
+                                    echo "<th class=\"right\">Account Number</th>";
+                                    echo "<th class=\"center\">Amount</th>";
+                                    echo "</tr>";
+                                    echo "</thead>";
+                                    echo "<tbody>";
+                                    echo "<tr>";
+                                    echo "<td class=\"left strong\">".$row["bank"]."</td>";
+                                    echo "<td class=\"left\">".$row["accountname"]."</td>";
+                                    echo "<td class=\"right\">".$row["accountnumber"]."</td>";
+                                    echo "<td class=\"center\">".$row["amount"]."</td>";
+                                    echo "</tr>";
+                                    echo "</tbody>";
+                                    echo "</table>";
+                                    echo "</div>";
+                                    echo "<div class=\"row\">";
+                                    echo "<div class=\"col-lg-4 col-sm-5\">";
+                                    echo "</div>";
+                                    echo "<div class=\"col-lg-4 col-sm-5 ml-auto verifypayment\">";
+                                    if ($status !== "<span class='text-success'>Approved</span>"){
+                                        echo "
+                                            <button onclick=\"location.assign('?transferid=".$row['id']."&pseudoCode=".$row['contestantCode']."')\" class=\"btn btn-icon btn-3 btn-info verifypayment\" type=\"button\">
+                                                <span class=\"btn-inner--icon\"><i class=\"ni ni-check-bold\"></i></span>
+                                                <span class=\"btn-inner--text\">Approve</span>
+                                            </button>
+                                        ";
+                                        echo "
+                                        <button onclick=\"location.assign('?transferdelid=".$row['id']."')\" class=\"btn btn-icon btn-3 btn-danger verifypayment\" type=\"button\">
+                                            <span class=\"btn-inner--icon\"><i class=\"ni ni-fat-remove\"></i></span>
+                                            <span class=\"btn-inner--text\">Delete</span>
+                                        </button>
+                                    ";
+                                    }
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                }
+                            }
+                            ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                    <div class="row mb-4">
-                    <div class="col-sm-6">
-                    <h6 class="mb-3">For:</h6>
-                    <div>
-                    <strong>AC01</strong>
-                    </div>
-                    </div>
-
-                    </div>
-
-                    <div class="table-responsive-sm">
-                    <table class="table table-striped">
-                    <thead>
-                    <tr>
-                    <th>Bank</th>
-                    <th>Account Name</th>
-
-                    <th class="right">Account Number</th>
-                      <th class="center">Amount</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    <td class="left strong">Zenith Bank</td>
-                    <td class="left">Okoro ThankGod</td>
-
-                    <td class="right">2178005104</td>
-                      <td class="center">₦2,500.00</td>
-                    </tr>
-                    </tbody>
-                    </table>
-                    </div>
-                    <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-
-                    </div>
-
-
-                    <div class="col-lg-4 col-sm-5 ml-auto verifypayment">
-                      <button class="btn btn-icon btn-3 btn-info verifypayment" type="button">
-                      <span class="btn-inner--icon"><i class="ni ni-check-bold"></i></span>
-                        <span class="btn-inner--text">Approve</span>
-                    </button>
-
-                    <button class="btn btn-icon btn-3 btn-danger verifypayment" type="button">
-                      <span class="btn-inner--icon"><i class="ni ni-fat-remove"></i></span>
-                        <span class="btn-inner--text">Delete</span>
-                    </button>
-                    </div>
-
-                    </div>
-
-                    </div>
-                    </div>
-                    </div>
-
                 </div>
-              </div>
             </div>
+        </form>
+    </div>
+
+    <!--EDIT CONTESTANT Modal -->
+    <div class="modal fade" id="approveTraferModal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: center;"><?php echo $Msg; ?></p>
+                    <div class="container">
+                        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
+                            <div class="row">
+                                <h3>Confirm Transition Amount</h3>
+                                    <input type="text" class="form-control mb-3" placeholder="Enter Approved Amount" name="amount">
+                                    <input type="hidden" name="depositorid" value="<?php echo $_GET['transferid']?>">
+                                    <input type="hidden" name="contestant" value="<?php echo $_GET['pseudoCode']?>">
+                                    <input class="btn btn-default" type="submit" name="updateBankTranferBtn" value="Save Changes">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </form>
         </div>
+    </div>
 
-      <!-- End Verify Payment -->
-
-
-        <!-- Footer -->
-       <?php require('./components/footer.php'); ?>
-        <!-- End Footer -->
-  
+    <?php require('./components/footer.php'); ?>

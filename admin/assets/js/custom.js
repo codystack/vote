@@ -56,6 +56,9 @@ function queryParameters () {
 if (queryParameters().add === "true"){
     $('#addContestantsModal').modal('show');
 }
+if (queryParameters().transferid){
+    $('#approveTraferModal').modal('show');
+}
 
 
 // for success or error messages
@@ -73,7 +76,7 @@ if (queryParameters().success === "updated"){
     Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Update was successfully!',
+        title: 'Updated was successfully!',
         showConfirmButton: false,
         timer: 3000
     })

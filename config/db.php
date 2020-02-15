@@ -18,7 +18,7 @@ if ($WEBSITE_ENVIRONMENT =="Development") {
     $password 	= "d0f3533b";
     $database 	= "heroku_d18d01704c96bfc";
     define("APP_ENVIRONMENT", "Production");
-    define("APP_BASE_URL", "https://kingdomlifegospel.org");
+    define("APP_BASE_URL", "https://pageantry-vote.herokuapp.com");
     #error_reporting(0); // turn OFF showing errors
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 }
