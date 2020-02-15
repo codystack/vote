@@ -134,10 +134,11 @@ img {
   height: 521px; }
 
 .form-content {
-  width: 65%;
+  /*width: 65%;*/
   padding-top: 65px;
-  padding-left: 51px;
-  padding-right: 51px; }
+  /*padding-left: 51px;*/
+  /*padding-right: 51px; */
+}
 
 .form-header {
   text-align: center; }
@@ -435,6 +436,10 @@ textarea.form-control {
     bottom: 3%; } }
 
 /*# sourceMappingURL=style.css.map */
+input.bubbly-button2.prev {
+  background: #95d5dc;
+}
+
 #inc, #dec {
   background: #d3ecec !important;
   border: 1px solid #acc7c7 !important;
@@ -458,8 +463,21 @@ textarea.form-control {
 }
 .constant-img{
   object-fit: cover;
-  object-position: left;
+  object-position: right;
 }
 .input-group-prepend{
   margin-bottom: 0 !important;
+}
+
+button.swal2-cancel.btn.btn-danger{
+  margin: 0 10px;
+}
+
+/*.error{*/
+/*  display: none;*/
+/*  margin-left: 10px;*/
+/*}*/
+
+.error{
+  color: #e09191;
 }

@@ -8,7 +8,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
     $updateQuery = mysqli_query($conn,"UPDATE `admin` SET `lastAction` = '$time' WHERE `lastAction` = NOW() - 1800");
     session_unset();     // unset $_SESSION variable for the run-time
     session_destroy();   // destroy session data in storage
-    header("Location: ?login=0&time=inactive");
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=index\">";
     exit();
 }$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
@@ -16,6 +16,54 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 // initializing variables
 $errors =  array();
 $username= "";
+if (isset($_GET['totalAmount'])){
+    $emailAddress = $_GET['email'];
+}
+
+if (isset($_GET['payment']) && $_GET['payment'] === "0"){
+    $contestant = $_GET['q'];
+    $voteCount = $_GET['voteCount'];
+    $bankname = $_GET['bankname'];
+    $accountname = $_GET['actname'];
+    $accountnumber = $_GET['actnumber'];
+    $status = 0;
+    $amount = 0;
+
+    $insertBankdetails = mysqli_query($conn,  "INSERT INTO bankdetails (contestantCode, bank, accountname, accountnumber, amount, status, paymentdate) VALUES('$contestant', '$bankname', '$accountname', '$accountnumber', '$amount', '$status', NOW())");
+    if ($insertBankdetails){
+        header("Location: ?tranfer=1");
+    } else {
+        header("Location: ?error=true");
+    }
+}
+
+if (isset($_GET['success']) && $_GET['success'] === "voted"){
+    $contestant = $_GET['contestant'];
+    $voteCount = $_GET['count'];
+    $totalAmount = $_GET['amount'];
+    $fname = $_GET['fname'];
+    $lname = $_GET['lname'];
+    $email = $_GET['email'];
+
+    $selConts =  "SELECT * FROM contestants WHERE pseudocode = '$contestant'";
+    $result = mysqli_query($conn, $selConts);
+    if (mysqli_num_rows($result) > 0){
+        $row = mysqli_fetch_assoc($result);
+        $score = $voteCount + $row["scores"]; //increments scores
+
+        $incVote = mysqli_query($conn, "UPDATE `contestants` SET scores = '$score' WHERE `pseudocode` = '$contestant'");
+        $insertVoter = mysqli_query($conn,  "INSERT INTO voters (firstname, lastname, email, number_of_vote, amount, contestants, date_voted) VALUES('$fname', '$lname', '$email', '$voteCount', '$totalAmount', '$contestant', NOW())");
+
+        $id = $row['id'];
+        $allVotes = mysqli_query($conn, "INSERT INTO votes (contestantsid, votecount) VALUE ('$id', '$voteCount')");
+        if ($allVotes){
+            header("Location: ?thankyou=1");
+        } else {
+            header("Location: ?error=true");
+        }
+    }
+}
+
 
 // CODE IF CLICKED ON LOGIN
 if (isset($_POST['admin_login_btn'])) {
@@ -168,6 +216,44 @@ function editContestant($conn, $pseudoCode, $fname, $lname, $edit_id)
         unset($_SESSION['editid']);
         exit();
     }
+}
+
+//FOR BANK TRANSFER
+if (isset($_POST['updateBankTranferBtn'])){
+    $transferid = $_POST['depositorid'];
+    $pseudoCode = $_POST['contestant'];
+    $amount = $_POST['amount'];
+    $status = 1;
+
+    if (!empty($amount)){
+        $updateQuery = mysqli_query($conn,"UPDATE `bankdetails` SET amount = '$amount', status = '$status' WHERE `contestantCode` = '$pseudoCode'");
+        if ($updateQuery){
+            $selectConts = "SELECT * FROM contestants WHERE pseudocode = '$pseudoCode'";
+            $result = mysqli_query($conn, $selectConts);
+            if (mysqli_num_rows($result) > 0){
+                $row = mysqli_fetch_assoc($result);
+                if ($amount == 50){
+                    $score = $row["scores"] + 1; //increments scores
+                } else {
+                    $score = $amount / 50 + $row["scores"]; //increments scores
+                }
+                $incVote = mysqli_query($conn, "UPDATE `contestants` SET scores = '$score' WHERE `pseudocode` = '$pseudoCode'");
+                if ($incVote){
+                    header("Location: ?success=updated");
+                } else {
+                    header("Location: ?error=true");
+                }
+            }
+        }
+    }
+}
+
+//DELETE TRANSFER
+if (isset($_GET['transferdelid'])){
+    $del_selected = mysqli_query($conn, "DELETE FROM bankdetails WHERE id = '".$_GET['transferdelid']."'");
+    mysqli_query($conn,"ALTER TABLE contestants AUTO_INCREMENT = 1");
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=verify-payment\">";
+    exit();
 }
 //LOGOUT ADMIN
 if (isset($_GET['logout'])) {

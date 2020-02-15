@@ -7,7 +7,7 @@
         <div class='info'>
             <h2 class='title'><?php echo strtoupper($row['pseudocode']);?></h2>
             <div class='vote-result'><span>Vote Result:</span> <?php echo $row['scores'];?></div>
-            <button class="bubbly-button2"><a href="pay" style="text-decoration: none; color: #fff;">VOTE</a></button>
+            <button class="bubbly-button2"><a href="?q=<?php echo $row['pseudocode'] ?>" style="text-decoration: none; color: #fff;">VOTE</a></button>
         </div>
     </div>
 </div>

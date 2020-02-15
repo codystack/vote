@@ -184,7 +184,7 @@ include('./components/navbar.php');
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+
                             <?php
                             $sql = "SELECT * FROM contestants order by id DESC";
                             $result = mysqli_query($conn, $sql);
@@ -197,6 +197,7 @@ include('./components/navbar.php');
                                         $status = "<span class='badge badge-dot'><i class='bg-success'></i> Deleted</span>";
                                     }
                                     echo "
+                                    <tr>
                                     <th scope='row'>
                                         <div class='media align-items-center'>
                                             <a href='#' class='avatar rounded-circle mr-3'><img alt='Image placeholder' src='./uploads/".$row['image']."'></a>
@@ -207,12 +208,13 @@ include('./components/navbar.php');
                                     echo "<td>".$row['scores']."</td>";
                                     echo "<td>".$status."</td>";
                                     echo "<td>".strtoupper($row['pseudocode'])."</td>";
+                                    echo "</tr>";
                                 }
                             }else {
                                 echo "<td><p>You have 0 Contestant!</p></td>";
                             }
                             ?>
-                        </tr>
+
                         </tbody>
                     </table>
                 </div>
