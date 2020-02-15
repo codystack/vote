@@ -10,7 +10,7 @@ if ($WEBSITE_ENVIRONMENT =="Development") {
     $password 	= "Inno070687";
     $database 	= "voteonline_database";
     define("APP_ENVIRONMENT", "Development");
-    define("APP_BASE_URL", "http://localhost/kingdomlife");
+    define("APP_BASE_URL", "http://localhost/vote");
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 } else {
     $host 		= "localhost";
