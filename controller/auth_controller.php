@@ -239,6 +239,7 @@ if (isset($_POST['updateBankTranferBtn'])){
                 }
                 $incVote = mysqli_query($conn, "UPDATE `contestants` SET scores = '$score' WHERE `pseudocode` = '$pseudoCode'");
                 if ($incVote){
+                    $allVotes = mysqli_query($conn, "INSERT INTO votes (contestantsid, votecount) VALUE ('".$row['id']."', '$score')");
                     header("Location: ?success=updated");
                 } else {
                     header("Location: ?error=true");
