@@ -13,12 +13,12 @@ if ($WEBSITE_ENVIRONMENT =="Development") {
     define("APP_BASE_URL", "http://localhost/kingdomlife");
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 } else {
-    $host 		= "us-cdbr-iron-east-05.cleardb.net";
-    $user 		= "bfbe4cbf546837";
-    $password 	= "d0f3533b";
-    $database 	= "heroku_d18d01704c96bfc";
+    $host 		= "localhost";
+    $user 		= "voteonlineuser";
+    $password 	= "f.DX4^N}Oscl";
+    $database 	= "voteonline";
     define("APP_ENVIRONMENT", "Production");
-    define("APP_BASE_URL", "https://pageantry-vote.herokuapp.com");
+    define("APP_BASE_URL", "https://www.nigerianqueen.org/vote");
     #error_reporting(0); // turn OFF showing errors
     error_reporting(E_ALL ^ E_NOTICE); // turn ON showing errors
 }
