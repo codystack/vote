@@ -26,12 +26,13 @@ if (isset($_GET['payment']) && $_GET['payment'] === "0"){
     $bankname = $_GET['bankname'];
     $accountname = $_GET['actname'];
     $accountnumber = $_GET['actnumber'];
+    $proofimg = $_GET['proofimg'];
     $status = 0;
     $amount = 0;
 
-    $insertBankdetails = mysqli_query($conn,  "INSERT INTO bankdetails (contestantCode, bank, accountname, accountnumber, amount, status, paymentdate) VALUES('$contestant', '$bankname', '$accountname', '$accountnumber', '$amount', '$status', NOW())");
+    $insertBankdetails = mysqli_query($conn,  "INSERT INTO bankdetails (contestantCode, bank, accountname, accountnumber, amount, status, proofimage, paymentdate) VALUES('$contestant', '$bankname', '$accountname', '$accountnumber', '$amount', '$status', '$proofimg', NOW())");
     if ($insertBankdetails){
-        header("Location: ?tranfer=1");
+        header("Location: ?transfer=1");
     } else {
         header("Location: ?error=true");
     }

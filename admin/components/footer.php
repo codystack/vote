@@ -37,6 +37,16 @@
         $('#editContestantsModal').modal('show');
         document.write('<?php createeditid();?>');
     }
+    function proof(image) {
+        Swal.fire({
+            text: 'Payment Proof Screenshot!',
+            imageUrl: image,
+            imageWidth: 800,
+            imageHeight: 400,
+            imageAlt: 'Custom image',
+        })
+    }
+    $(".swal2-image").css('object-fit','contain');
 </script>
 </body>
 </html>

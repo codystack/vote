@@ -336,7 +336,11 @@ and (orientation: landscape) {
     height: auto;
   }
   .input-group-append, .input-group-prepend{
-    display: grid;
+    display: block;
+    width: max-content;
+  }
+  #inc, #dec{
+    padding: 10px;
   }
   input {
     margin: 10px 0;

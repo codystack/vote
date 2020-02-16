@@ -6,7 +6,7 @@
             <div class="col">
 
 
-                <form id="paymentform" class="form">
+                <form id="paymentform" class="form" enctype="multipart/form-data">
 
                     <!-- SECTION 1 -->
                     <section id="div1" style="display: none">
@@ -17,7 +17,8 @@
                             <div class="col bg-white">
                                 <div class="form-content" >
                                     <div class="form-header">
-                                        <h3>Vote for <?php echo strtoupper($pseudo);?></h3>
+                                        <h3 class="m-0 mb-2">Vote for <?php echo strtoupper($pseudo);?></h3>
+                                        <h6 class="mb-5" style="color: #259dab;">Vote Result: <?php echo $scores;?></h6>
                                     </div>
                                     <p>Select Number of Votes</p>
                                     <div style="text-align: center;">
@@ -52,7 +53,8 @@
                             <div class="col bg-white">
                                 <div class="form-content">
                                     <div class="form-header">
-                                        <h3>Mode of Payment</h3>
+                                        <h3 class="m-0 mb-2">Mode of Payment</h3>
+                                        <h6 class="mb-5" style="color: #259dab;">Vote Result: <?php echo $scores;?></h6>
                                     </div>
                                     <p>Please select how you want to pay</p>
                                     <div class="paycon d-flex">
@@ -81,7 +83,8 @@
                             <div class="col bg-white">
                                 <div class="form-content">
                                     <div class="form-header">
-                                        <h3>Make Payment</h3>
+                                        <h3 class="m-0 mb-2">Make Payment</h3>
+                                        <h6 class="mb-5" style="color: #259dab;">Vote Result: <?php echo $scores;?></h6>
                                     </div>
                                     <p>Make a payment of &#8358;<span id="total-payment"></span> to the account below</p>
                                     <table class="table table-striped">
@@ -127,10 +130,16 @@
                             <div class="col-6 bg-white">
                                 <div class="form-content">
                                     <div class="form-header">
-                                        <h3>Payment details</h3>
+                                        <h3 class="m-0 mb-2">Payment details</h3>
+                                        <h6 class="mb-4" style="color: #259dab;">Vote Result: <?php echo $scores;?></h6>
                                     </div>
-                                    <p>Fill in depositor's account details of the account. For bank deposit, fill in deposit slip details for confirmation.</p>
-
+                                    <p id="status" class="p-0">Fill in depositor's account details of the account. or bank deposit slip details for confirmation.</p>
+                                    <div class="input-group mb-2">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="myInput" name="proofimg" aria-describedby="myInput">
+                                            <label class="custom-file-label" for="myInput"><small>Click to Upload a Proof of Payment</small></label>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <input id="bankname" name="bankname" type="text" placeholder="Bank Name" class="form-control">
                                         <span class="error"></span>
@@ -162,7 +171,8 @@
                             <div class="col-6 bg-white">
                                 <div class="form-content">
                                     <div class="form-header">
-                                        <h3>Enter your Details</h3>
+                                        <h3 class="m-0 mb-2">Enter your Details</h3>
+                                        <h6 class="mb-5" style="color: #259dab;">Vote Result: <?php echo $scores;?></h6>
                                     </div>
                                     <p>Please fill all field to complete your online payment</p>
                                     <div class="form-group">

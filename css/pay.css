@@ -152,7 +152,7 @@ h3 {
   padding: 5px 5px;
   display: inline-block;
   border: 1px solid #dad8e4;
-  margin-bottom: 75px; }
+  margin-bottom: 65px; }
 
 p {
   font-family: 'Lato', sans-serif;
@@ -473,6 +473,29 @@ button.swal2-cancel.btn.btn-danger{
   margin: 0 10px;
 }
 
+#customFile .custom-file-input:lang(en)::after {
+  content: "Select file...";
+}
+
+#customFile .custom-file-input:lang(en)::before {
+  content: "Click me";
+}
+
+/*when a value is selected, this class removes the content */
+.custom-file-input.selected:lang(en)::after {
+  content: "" !important;
+}
+
+.custom-file {
+  overflow: hidden;
+}
+.custom-file-input {
+  white-space: nowrap;
+}
+
+input[type="file"] {
+  color: black !important;
+}
 /*.error{*/
 /*  display: none;*/
 /*  margin-left: 10px;*/

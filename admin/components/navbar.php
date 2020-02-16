@@ -23,24 +23,24 @@
             <div class=" dropdown-header noti-title">
               <h6 class="text-overflow m-0">Welcome!</h6>
             </div>
-            <a href="./examples/profile.html" class="dropdown-item">
+            <a href="#" class="dropdown-item">
               <i class="ni ni-single-02"></i>
               <span>My profile</span>
             </a>
-            <a href="./examples/profile.html" class="dropdown-item">
+            <a href="#" class="dropdown-item">
               <i class="ni ni-settings-gear-65"></i>
               <span>Settings</span>
             </a>
-            <a href="./examples/profile.html" class="dropdown-item">
+            <a href="#" class="dropdown-item">
               <i class="ni ni-calendar-grid-58"></i>
               <span>Activity</span>
             </a>
-            <a href="./examples/profile.html" class="dropdown-item">
+            <a href="#" class="dropdown-item">
               <i class="ni ni-support-16"></i>
               <span>Support</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a href="?logout=true" class="dropdown-item">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>
@@ -80,36 +80,40 @@
         -->
         <!-- Navigation -->
         <ul class="navbar-nav">
-          <li class="nav-item  active ">
-            <a class="nav-link  active " href="index">
+          <li class="nav-item dashboard ">
+            <a class="nav-link" href="index">
               <i class="ni ni-align-left-2 text-blue"></i> Dashboard
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item contestants">
             <a class="nav-link" href="contestants">
               <i class="ni ni-single-02 text-blue"></i> Contestants
             </a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown voters">
             <a class="nav-link dropdown-toggle" href="" id="paymentsDropdown" role="button" data-toggle="dropdown">
-              <i class="ni ni-box-2 text-blue"></i> Votes
+              <i class="ni ni-box-2 text-blue"></i> Voters
             </a>
             <div class="dropdown-menu" aria-labelledby="voteDropdown">
-              <a class="dropdown-item" href="payment-gateway">Payment gateway</a>
-              <a class="dropdown-item" href="verify-payment">Verify payment</a>
-              <a class="dropdown-item" href="bank-details">Bank details</a>
+              <a class="dropdown-item" href="online-voters">Online Voters</a>
+              <a class="dropdown-item" href="offline-voters">Offline Voters</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="paymentsDropdown" role="button" data-toggle="dropdown">
-              <i class="ni ni-money-coins text-blue"></i> Payments
-            </a>
-            <div class="dropdown-menu" aria-labelledby="paymentsDropdown">
-              <a class="dropdown-item" href="payment-gateway">Payment gateway</a>
-              <a class="dropdown-item" href="verify-payment">Verify payment</a>
-              <a class="dropdown-item" href="bank-details">Bank details</a>
-            </div>
-          </li>
+            <li class="nav-item gateway">
+                <a class="nav-link" href="payment-gateway">
+                    <i class="ni ni-lock-circle-open text-blue"></i> Payment Gateway
+                </a>
+            </li>
+            <li class="nav-item verify">
+                <a class="nav-link" href="verify-payment">
+                    <i class="ni ni-money-coins text-blue"></i> Verify payment
+                </a>
+            </li>
+            <li class="nav-item client">
+                <a class="nav-link" href="bank-details">
+                    <i class="ni ni-user-run text-blue"></i> Client Account
+                </a>
+            </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" id="settingsDropdown" role="button" data-toggle="dropdown">
               <i class="ni ni-settings text-blue"></i> Settings
@@ -138,7 +142,7 @@
         <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
-            <a class="nav-link" href="documentation">
+            <a class="nav-link" href="#">
               <i class="ni ni-spaceship"></i> Getting started
             </a>
           </li>
@@ -175,7 +179,7 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="https://i.imgur.com/n1d2JNC.jpg">
+                  <img alt="Image placeholder" src="https://i.imgur.com/09BChWb.png">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold"><?php echo $_SESSION['username']?></span>
@@ -186,24 +190,24 @@
               <div class=" dropdown-header noti-title">
                 <h6 class="text-overflow m-0">Welcome!</h6>
               </div>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
                 <span>My profile</span>
               </a>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-settings-gear-65"></i>
                 <span>Settings</span>
               </a>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-calendar-grid-58"></i>
                 <span>Activity</span>
               </a>
-              <a href="./examples/profile.html" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="ni ni-support-16"></i>
                 <span>Support</span>
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#!" class="dropdown-item">
+              <a href="?logout=true" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
               </a>
