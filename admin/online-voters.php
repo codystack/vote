@@ -13,12 +13,13 @@ require_once './components/navbar.php';
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0 ">
-                    <div class="col px-0 pb-3">
+                    <div class="col px-0 pb-3 d-flex justify-content-between">
                         <h2 class="mb-0">All Online Voters</h2>
+                        <input class="form-control w-50 mr-3 mb-0" type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter by Voter Name.." title="Type in a name">
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
+                    <table id="myTable" class="table align-items-center table-flush">
                         <thead class="thead-light">
                         <tr>
                             <th scope="col">Voter Name</th>
@@ -42,7 +43,7 @@ require_once './components/navbar.php';
                                 echo "<td>".$row['email']."</td>";
                                 echo "<td>".$row['number_of_vote']."</td>";
                                 echo "<td>".$row['amount']."</td>";
-                                echo "<td>".$row['contestants']."</td>";
+                                echo "<td>".strtoupper($row['contestants'])."</td>";
                                 echo "<td>".date('F/j/Y',strtotime($row['date_voted']))."</td>";
                                 echo "</tr>";
                             }

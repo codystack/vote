@@ -324,7 +324,7 @@ and (orientation: landscape) {
 }
 @media screen and (max-width: 768px) and (min-width: 320px){
   .image:after {
-    margin-left: -130px;
+    margin-left:-165px;
   }
   .s130 {
     padding: 35px 15px;
@@ -356,5 +356,12 @@ and (orientation: landscape) {
   }
   #div5 .col-6{
     flex: auto !important;
+  }
+  input#display {
+    text-align: center;
+  }
+  .input-group.mba {
+    width: auto;
+    margin: auto;
   }
 }

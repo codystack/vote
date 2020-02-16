@@ -130,7 +130,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="voting-status">
+            <a class="nav-link " href="#">
               <i class="ni ni-button-power text-blue"></i> Voting status
             </a>
           </li>

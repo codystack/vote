@@ -24,11 +24,6 @@
   <link href="./assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="./assets/css/voteonline-dashboard.css?v2.1.2" rel="stylesheet" />
-    <link href=".assets/css/custom.css" rel="stylesheet" />
-    <style>
-        img.swal2-image {
-            object-fit: contain !important;
-        }
-    </style>
+    <link href="./assets/css/custom.css" rel="stylesheet" />
 </head>
 <body class="">

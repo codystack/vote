@@ -242,11 +242,45 @@ if (isset($_POST['updateBankTranferBtn'])){
                 if ($incVote){
                     $allVotes = mysqli_query($conn, "INSERT INTO votes (contestantsid, votecount) VALUE ('".$row['id']."', '$score')");
                     header("Location: ?success=updated");
+                    exit();
                 } else {
                     header("Location: ?error=true");
+                    exit();
                 }
             }
         }
+    }
+}
+
+//FOR GIFT A CONTESTANT VOTE
+if (isset($_POST['giftBtn'])){
+    $pseudoCode = $_POST['contestant'];
+    $amount = $_POST['amount'];
+
+    if (!empty($amount)){
+        $selectConts = "SELECT * FROM contestants WHERE pseudocode = '$pseudoCode'";
+        $result = mysqli_query($conn, $selectConts);
+        if (mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_assoc($result);
+            if ($amount == 50){
+                $score = $row["scores"] + 1; //increments scores
+            } else {
+                $score = $amount / 50 + $row["scores"]; //increments scores
+            }
+            $incVote = mysqli_query($conn, "UPDATE `contestants` SET scores = '$score' WHERE `pseudocode` = '$pseudoCode'");
+            if ($incVote){
+                $allVotes = mysqli_query($conn, "INSERT INTO votes (contestantsid, votecount) VALUE ('".$row['id']."', '$score')");
+                header("Location: ?success=updated");
+                exit();
+            } else {
+                header("Location: ?error=true");
+                exit();
+            }
+        }
+    } else {
+        $errors['empty_error'] = "Please enter an amount, Biko!";
+        header("Location: ?error=true&errorMsg=".$errors['empty_error']);
+        exit();
     }
 }
 

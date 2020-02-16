@@ -140,6 +140,9 @@
     // theme.buttons(button, black);
     // theme.specialButtons(sButton, black);
 
+    //VALIDATE NUMBER OF VOTE
+
+
     // VALIDATE BANKTRANSFER
 
     $('input').on("focus", function() {

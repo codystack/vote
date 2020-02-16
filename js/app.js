@@ -36,9 +36,10 @@ function queryParameters () {
     return result;
 }
 
-let i = 1;
+let i = 10;
 let total = 50;
-// total-payment
+let default_amount = 500;
+const next_button = document.getElementById("next1");
 
 const amount = document.getElementById("total-amount");
 const paymentAmount = document.getElementById("total-payment");
@@ -54,6 +55,11 @@ function incNumber() {
     document.getElementById("total-amount").innerHTML = total * i;
     document.getElementById("total-payment").innerHTML = total * i;
     document.getElementById("total").value = total * i;
+
+    if ($("#display").val() == 10){
+        $("input#next1").removeClass('prev');
+        $("input#next1").prop("disabled", false);
+    }
 }
 
 function decNumber() {
@@ -67,9 +73,14 @@ function decNumber() {
     document.getElementById("total-amount").innerHTML = total * i;
     document.getElementById("total-payment").innerHTML = total * i;
     document.getElementById("total").value = total * i;
+
+    if ($("#display").val() < 10){
+        $("input#next1").addClass('prev');
+        $("input#next1").prop("disabled", true);
+    }
 }
-amount.innerText = total;
-paymentAmount.innerText = total;
+amount.innerText = default_amount;
+paymentAmount.innerText = default_amount;
 // amount_to_pay = amount.innerText;
 
 document.querySelector('.custom-file-input').addEventListener('change',function(e){
