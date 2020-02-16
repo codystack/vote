@@ -16,7 +16,10 @@ include('./components/navbar.php');
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                                    <span class="h2 font-weight-bold mb-0">350,897</span>
+                                    <?php
+                                    $countTraffic = mysqli_query($conn, "SELECT id FROM traffic");
+                                    echo "<span class=\"h2 font-weight-bold mb-0\">".mysqli_num_rows($countTraffic)."</span>";
+                                    ?>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -34,7 +37,33 @@ include('./components/navbar.php');
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Revenue Generated</h5>
-                                    <span class="h2 font-weight-bold mb-0">₦2,356</span>
+
+                                    <?php
+                                    $ch = curl_init();
+
+                                    curl_setopt($ch, CURLOPT_URL, 'https://api.paystack.co/transaction/totals');
+                                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                                    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+
+                                    $headers = array();
+                                    $headers[] = 'Authorization: Bearer sk_live_9335950e6b799a2ac373bb91a7587786ebc9c3a1';
+                                    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+                                    $result = curl_exec($ch);
+                                    if($result){
+                                        $data = json_decode($result, true);
+
+                                        $totalAmount = $data['data']['total_volume'];
+//                                        echo "<p class='card-title'>".$totalpaidOnline."<p>";
+                                    }
+                                    if (curl_errno($ch)) {
+                                        echo 'Error:' . curl_error($ch);
+                                    }
+                                    curl_close($ch);
+                                    ?>
+
+                                    <div id="totalAmount" class="h2 font-weight-bold mb-0">₦<?php echo number_format($totalAmount);?></div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -333,3 +362,15 @@ include('./components/navbar.php');
     <!-- Footer -->
     <?php require('./components/footer.php'); ?>
     <!-- End Footer -->
+<script>
+    // var total = document.getElementById('totalAmount');
+    // let total = $('#totalAmount').val();
+    // total = total * 2;
+    // $('#totalAmount').html(total);
+    // console.log(total);
+    $('#totalAmount').text(function () {
+        total = $(this).text().substr(0, 500000);
+    });
+    console.log(total);
+
+</script>

@@ -13,12 +13,13 @@ require_once './components/navbar.php';
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0 ">
-                    <div class="col px-0 pb-3">
+                    <div class="col d-flex justify-content-between px-0 pb-3">
                         <h2 class="mb-0">All Approved Transfers</h2>
+                        <input class="form-control w-50 mr-3 mb-0" type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter by Voter Name.." title="Type in a name">
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
+                    <table id="myTable" class="table align-items-center table-flush">
                         <thead class="thead-light">
                         <tr>
                             <th scope="col">Bank Name</th>
@@ -42,6 +43,7 @@ require_once './components/navbar.php';
                                 $status = "Approved";
 
                                 echo "<tr>";
+                                echo "<td class='d-none'>".$row['accountnumber']."</td>"; //for filters
                                 echo "<td>".$row['bank']."</td>";
                                 echo "<td>".$row['accountname']."</td>";
                                 echo "<td>".$row['accountnumber']."</td>";

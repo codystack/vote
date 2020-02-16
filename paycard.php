@@ -25,10 +25,10 @@
                                         <div class="input-group mba mb-4">
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text">Vote(s)</label>
-                                                <input id="display" type="text" class="px-3" value='1' disabled>
+                                                <input id="display" type="text" class="px-3" value='10' disabled>
                                                 <input id="contestant" type="hidden" name="q" value="<?php echo $pseudo;?>">
-                                                <input id="count" type="hidden" value='1' name="voteCount">
-                                                <input id="total" type="hidden" value='50' name="totalAmount">
+                                                <input id="count" type="hidden" value='10' name="voteCount">
+                                                <input id="total" type="hidden" value='500' name="totalAmount">
                                                 <input type="button" value="+" id="inc" onclick="incNumber()"/>
                                                 <input type="button" value="-" id="dec" onclick="decNumber()"/>
                                             </div>
@@ -36,7 +36,7 @@
                                     </div>
                                     <!-- The amount should increse when the numbers go up and vice versa -->
                                     <h4 style="color: #0a0c0d; margin-bottom: 1rem;">Amount: &#8358;<span id="total-amount"></span></h4>
-                                    <p>Please note that each vote cost ₦50 only.
+                                    <p>Please note that each vote cost ₦50 only.<br>And a minimum of 10 votes is required.
                                     </p>
                                     <input type="button" class="bubbly-button2" value="Next" id="next1"/>
                                 </div>

@@ -30,6 +30,25 @@ if(voters  || online_voters){
     voters_nav.classList.add('active');
 }
 
+function myFunction() {
+    var input, filter, table, tr, td, i, txtValue, pseudoCode;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
 $(document).ready(function() {
     let max_fields      = 5; //maximum input boxes allowed
     let wrapper   		= $(".input_fields_wrap"); //Fields wrapper
@@ -83,6 +102,9 @@ if (queryParameters().add === "true"){
 if (queryParameters().transferid){
     $('#approveTraferModal').modal('show');
 }
+if (queryParameters().giftid){
+    $('#giftModal').modal('show');
+}
 
 
 // for success or error messages
@@ -94,7 +116,12 @@ if (queryParameters().success === "added"){
         title: 'New Contestant added successfully!',
         showConfirmButton: false,
         timer: 3000
-    })
+    });
+    setTimeout(function(){
+        let removePram = window.location.href;
+        removePram = window.location.href.split("?")[0];
+        window.location.assign(removePram);
+    }, 1000);
 }
 if (queryParameters().success === "updated"){
     Swal.fire({
@@ -103,7 +130,12 @@ if (queryParameters().success === "updated"){
         title: 'Updated was successfully!',
         showConfirmButton: false,
         timer: 3000
-    })
+    });
+    setTimeout(function(){
+        let removePram = window.location.href;
+        removePram = window.location.href.split("?")[0];
+        window.location.assign(removePram);
+    }, 1000);
 }
 if (queryParameters().success === "deleted"){
     Swal.fire({
@@ -112,7 +144,12 @@ if (queryParameters().success === "deleted"){
         title: 'Deleted successfully!',
         showConfirmButton: false,
         timer: 3000
-    })
+    });
+    setTimeout(function(){
+        let removePram = window.location.href;
+        removePram = window.location.href.split("?")[0];
+        window.location.assign(removePram);
+    }, 1000);
 }
 if (queryParameters().error === "couldnotCreate"){
     Swal.fire({
@@ -121,7 +158,12 @@ if (queryParameters().error === "couldnotCreate"){
         title: 'There was an error, please check your connection!',
         showConfirmButton: false,
         timer: 3000
-    })
+    });
+    setTimeout(function(){
+        let removePram = window.location.href;
+        removePram = window.location.href.split("?")[0];
+        window.location.assign(removePram);
+    }, 1000);
 }
 if (queryParameters().error === "notdeleted"){
     Swal.fire({
@@ -130,5 +172,15 @@ if (queryParameters().error === "notdeleted"){
         title: 'Something went wrong while deleting! please check your connection and try again.',
         showConfirmButton: false,
         timer: 3000
-    })
+    });
+    setTimeout(function(){
+        let removePram = window.location.href;
+        removePram = window.location.href.split("?")[0];
+        window.location.assign(removePram);
+    }, 1000);
 }
+
+
+// let numb = parseInt($("#totalAmount").text());
+//
+// console.log(numb);

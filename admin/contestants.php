@@ -55,9 +55,12 @@ if (isset($_GET['editid'])){
                                 <span class="custom-toggle-slider rounded-circle"></span>
                             </label>
                         </div>
-                        <button onclick="location.assign('?add=true')" class="btn btn-icon btn-3 btn-info" type="button">
-                            <span class="btn-inner--text">Add contestant</span>
-                        </button>
+                        <div class="d-inline-flex">
+                            <input class="form-control mr-3 mb-0" type="text" id="myInput" onkeyup="myFunction()" placeholder="Filter by pseudoCode.." title="Type in a name">
+                            <button onclick="location.assign('?add=true')" class="btn btn-icon btn-3 btn-info" type="button">
+                                <span class="btn-inner--text"><i class="ni ni-fat-add"></i> Add contestant</span>
+                            </button>
+                        </div>
                     </div>
 
 
@@ -168,9 +171,36 @@ if (isset($_GET['editid'])){
                         </div>
                     </div>
 
+                    <!--APPROVE CONTESTANT VOTE Modal -->
+                    <div class="modal fade" id="giftModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header mb-0">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body mt-0">
+                                    <p class="text-danger" style="text-align: center;"><?php echo $_GET['errorMsg']; ?></p>
+                                    <div class="container">
+                                        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
+                                            <div class="row">
+                                                <h3>Enter an amount you want to gift <?php echo strtoupper($_GET['pseudoCode']);?></h3>
+                                                <input type="text" class="form-control mb-3" placeholder="Enter Amount you want to Gift" name="amount">
+                                                <input type="hidden" name="contestant" value="<?php echo $_GET['pseudoCode']?>">
+                                                <input class="btn btn-default" type="submit" name="giftBtn" value="Gift Now">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
+                    <table id="myTable" class="table align-items-center table-flush">
                         <thead class="thead-light">
                         <tr>
                             <th scope="col">Contestants</th>
@@ -181,7 +211,6 @@ if (isset($_GET['editid'])){
                         </tr>
                         </thead>
                         <tbody>
-
                             <?php
                             $sql = "SELECT * FROM contestants order by scores DESC";
                             $result = mysqli_query($conn, $sql);
@@ -202,10 +231,17 @@ if (isset($_GET['editid'])){
                                         </div>
                                     </th>
                                     ";
+                                    echo "<td class='d-nene'>".$row['pseudocode']."</td>";
                                     echo "<td>".$row['scores']."</td>";
                                     echo "<td>".$status."</td>";
-                                    echo "<td>".strtoupper($row['pseudocode'])."</td>";
-                                    echo "<td align=\"right\">";
+                                    echo "<td id='pseudoCode'>".strtoupper($row['pseudocode'])."</td>";
+                                    echo "<td class=\"text-right\">";
+                                    echo "
+                                        <button onclick=\"location.assign('?giftid=".$row['id']."&pseudoCode=".$row['pseudocode']."')\" class='btn btn-icon btn-3 btn-success' type='button'>
+                                            <span class='btn-inner--icon'><i class='ni ni-fat-add'></i></span>
+                                            <span class='btn-inner--text'>Gift Vote</span>
+                                        </button>
+                                    ";
                                     echo "
                                         <button onclick=\"location.assign('?editid=".$row['id']."')\" class='btn btn-icon btn-3 btn-info' type='button'>
                                             <span class='btn-inner--icon'><i class='ni ni-ruler-pencil'></i></span>
@@ -225,7 +261,6 @@ if (isset($_GET['editid'])){
                                 echo "<td><p>You have 0 Contestant!</p></td>";
                             }
                             ?>
-
                         </tbody>
                     </table>
                 </div>
