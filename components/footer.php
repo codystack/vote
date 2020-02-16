@@ -17,6 +17,32 @@
 <!--<script src="js/main.js"></script>-->
 <!--<script src="js/extention/choices.js"></script>-->
 <script>
+    // function _(el){
+    //     return document.getElementById(el);
+    // }
+    function uploadFile(){
+        // $("#next4").click(function(){
+
+            var fd = new FormData();
+            var files = $('#myInput')[0].files[0];
+            fd.append('file',files);
+
+            $.ajax({
+                url: 'controller/file_upload_parser.php',
+                type: 'post',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    if(response !== 0){
+                        $("#status").html('<p class="text-success">'+response+'</p>');
+                    }else{
+                        $("#status").html('<p class="text-danger">This Image can not be uploaded</p>');
+                    }
+                },
+            // });
+        });
+    }
     // $("section").hide('fast');
     $(document).ready(function () {
         $("section:nth-child(1)").show('fast');
@@ -115,12 +141,14 @@
     // theme.specialButtons(sButton, black);
 
     // VALIDATE BANKTRANSFER
+
     $('input').on("focus", function() {
         $(this).on("change", function () {
-            if ($("input#bankname").val() != '' && $("input#actname").val() != '' && $("input#actnumber").val() != ''){
+            if ($("input#bankname").val() != '' && $("input#actname").val() != '' && $("input#actnumber").val() != '' && $("input#myInput").val() != ''){
                 $("input#next4").removeClass('prev');
                 $("input#next4").prop("disabled", false);
                 $(".error").html("");
+                uploadFile();
             } else{
                 $("input#next4").addClass('prev');
                 $("input#next4").prop("disabled", true);
@@ -130,7 +158,7 @@
             }
         });
     });
-    // VALIDATE BANKTRANSFER
+    // VALIDATE ONLINE
     $('input').on("focus", function() {
         $(this).on("change", function () {
             if ($("input#firstname").val() != '' && $("input#lastname").val() != '' && $("input#email").val() != ''){
@@ -173,9 +201,7 @@
                         display_name: "Total Votes",
                         variable_name: "total_votes",
                         value: voteCount
-                    }
-                ],
-                custom_fields: [
+                    },
                     {
                         display_name: "Contestant PseudoCode",
                         variable_name: "pseudocode",
@@ -241,17 +267,23 @@
             title: 'Your vote was Successful!',
             showConfirmButton: false,
             timer: 6000
-        })
+        });
+        setTimeout(function(){
+            window.location.assign("index");
+        }, 10000);
     }
-    if (queryParameters().tranfer === "1"){
+    if (queryParameters().transfer === "1"){
         Swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Success!',
             text: 'Please note your vote will reflect once payment is verified.',
             showConfirmButton: false,
-            timer: 7000
-        })
+            timer: 10000
+        });
+        setTimeout(function(){
+            window.location.assign("index");
+        }, 10000);
     }
 
 

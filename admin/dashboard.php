@@ -24,11 +24,7 @@ include('./components/navbar.php');
                                     </div>
                                 </div>
                             </div>
-                            <!--
-                            <p class="mt-3 mb-0 text-muted text-sm">
-                              <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                              <span class="text-nowrap">Since last month</span>
-                            </p>-->
+
                         </div>
                     </div>
                 </div>
@@ -46,11 +42,7 @@ include('./components/navbar.php');
                                     </div>
                                 </div>
                             </div>
-                            <!--
-                            <p class="mt-3 mb-0 text-muted text-sm">
-                              <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                              <span class="text-nowrap">Since last week</span>
-                            </p>-->
+
                         </div>
                     </div>
                 </div>
@@ -60,7 +52,10 @@ include('./components/navbar.php');
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Contestants</h5>
-                                    <span class="h2 font-weight-bold mb-0">924</span>
+                                    <?php
+                                    $contst_count = mysqli_query($conn, "SELECT id FROM contestants");
+                                    echo "<span class=\"h2 font-weight-bold mb-0\">".mysqli_num_rows($contst_count)."</span>";
+                                    ?>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -68,11 +63,6 @@ include('./components/navbar.php');
                                     </div>
                                 </div>
                             </div>
-                            <!--
-                            <p class="mt-3 mb-0 text-muted text-sm">
-                              <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                              <span class="text-nowrap">Since yesterday</span>
-                            </p>-->
                         </div>
                     </div>
                 </div>
@@ -81,8 +71,12 @@ include('./components/navbar.php');
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Total votes</h5>
-                                    <span class="h2 font-weight-bold mb-0">49,655</span>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Total voters</h5>
+                                    <?php
+                                    $stmt = mysqli_query($conn, "SELECT votecount FROM votes");
+                                    $voters = mysqli_num_rows($stmt);
+                                    echo "<span class=\"h2 font-weight-bold mb-0\">".$voters."</span>";
+                                    ?>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -90,11 +84,7 @@ include('./components/navbar.php');
                                     </div>
                                 </div>
                             </div>
-                            <!--
-                            <p class="mt-3 mb-0 text-muted text-sm">
-                              <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                              <span class="text-nowrap">Since last month</span>
-                            </p>-->
+
                         </div>
                     </div>
                 </div>
@@ -186,7 +176,7 @@ include('./components/navbar.php');
                         <tbody>
 
                             <?php
-                            $sql = "SELECT * FROM contestants order by id DESC";
+                            $sql = "SELECT * FROM contestants order by scores DESC LIMIT 5";
                             $result = mysqli_query($conn, $sql);
                             if (mysqli_num_rows($result) > 0) {
                                 // output data of each row
@@ -339,3 +329,7 @@ include('./components/navbar.php');
             </div>
         </div>
     </div>
+</div>
+    <!-- Footer -->
+    <?php require('./components/footer.php'); ?>
+    <!-- End Footer -->

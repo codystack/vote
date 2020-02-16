@@ -1,10 +1,34 @@
-$(document).ready(function() {
-    $('#fileToUploadAdd').inputFileText({
-        text: 'Add Course Image'
-    });
-    // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-    demo.initChartsPages();
-});
+const title_el = document.querySelector("title");
+
+const admin = document.URL.indexOf("index") >= 0;
+const dashboard = document.URL.indexOf("dashboard") >= 0;
+const contestants_page = document.URL.indexOf("contestants") >= 0;
+const verify_payment = document.URL.indexOf("verify-payment") >= 0;
+const online_voters = document.URL.indexOf("online-voters") >= 0;
+const voters = document.URL.indexOf("offline-voters") >= 0;
+
+const dashboard_nav = document.querySelector("ul li.dashboard");
+const contestants_nav = document.querySelector('ul li.contestants');
+const verify_payment_nav = document.querySelector('ul li.verify');
+const online_voters_nav = document.querySelector('ul li.online_voters');
+const voters_nav = document.querySelector('ul li.voters');
+
+if(dashboard || admin){
+    title_el.innerHTML = "Dashboard :: Vote Online&trade;";
+    dashboard_nav.classList.add('active');
+}
+if(contestants_page){
+    title_el.innerHTML = "Contestants :: Vote Online&trade;";
+    contestants_nav.classList.add('active');
+}
+if(verify_payment){
+    title_el.innerHTML = "Verify Transfers :: Vote Online&trade;";
+    verify_payment_nav.classList.add('active');
+}
+if(voters  || online_voters){
+    title_el.innerHTML = "Voters :: Vote Online&trade;";
+    voters_nav.classList.add('active');
+}
 
 $(document).ready(function() {
     let max_fields      = 5; //maximum input boxes allowed
