@@ -54,7 +54,7 @@ include('./components/navbar.php');
                                     if($result){
                                         $data = json_decode($result, true);
 
-                                        $totalAmount = $data['data']['total_volume'];
+                                        $totalAmount = $data['data']['total_volume']/100;
 //                                        echo "<p class='card-title'>".$totalpaidOnline."<p>";
                                     }
                                     if (curl_errno($ch)) {
@@ -63,7 +63,7 @@ include('./components/navbar.php');
                                     curl_close($ch);
                                     ?>
 
-                                    <div id="totalAmount" class="h2 font-weight-bold mb-0">₦<?php echo number_format($totalAmount);?></div>
+                                    <div id="totalAmount" class="h2 font-weight-bold mb-0">&#8358;<?php echo number_format($totalAmount);?></div>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -364,13 +364,14 @@ include('./components/navbar.php');
     <!-- End Footer -->
 <script>
     // var total = document.getElementById('totalAmount');
-    // let total = $('#totalAmount').val();
-    // total = total * 2;
+    let total = $('#totalAmount').text();
+
+    // total = parseInt(total) / 100;
     // $('#totalAmount').html(total);
     // console.log(total);
-    $('#totalAmount').text(function () {
-        total = $(this).text().substr(0, 500000);
-    });
-    console.log(total);
+    // $('#totalAmount').text(function () {
+    //     total = $(this).text().substr(0, 500000);
+    // });
+    // console.log(total);
 
 </script>
