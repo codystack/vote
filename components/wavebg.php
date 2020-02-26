@@ -135,16 +135,8 @@ function applyVote ($conn, $scores, $pseudo, $visitor_ip, $contestant_id) {
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-              // if votting is turned on/off
-              if ($_SESSION['VOTTING_STATUS'] == 0) {
 
-                include ('dv_card.php');
-
-              } else {
-
-                include ('card.php');
-
-              };// if votting is turned on/off. (code block ending)
+              include ('card.php');
 
             };
         };
