@@ -7,7 +7,21 @@
         <div class='info'>
             <h2 class='title'><?php echo strtoupper($row['pseudocode']);?></h2>
             <div class='vote-result'><span>Vote Result:</span> <?php echo $row['scores'];?></div>
-            <button class="bubbly-button2"><a href="?q=<?php echo $row['pseudocode'] ?>" style="text-decoration: none; color: #fff;">VOTE</a></button>
+            <?php
+
+            // if votting is turned on/off
+            if ($_SESSION['VOTTING_STATUS'] == 0) {
+
+              echo '<button class="bubbly-button2"></button>';
+
+            } else {
+
+              echo '<button class="bubbly-button2"><a href="?q='. $row["pseudocode"] .'" style="text-decoration: none; color: #fff;">VOTE</a></button>';
+
+            };// if votting is turned on/off. (code block ending)
+
+            ?>
+
         </div>
     </div>
 </div>

@@ -263,7 +263,9 @@
     if (queryParameters().payment === "1"){
         payWithPaystack();
     }
+
     if (queryParameters().thankyou === "1"){
+
         Swal.fire({
             position: 'center',
             icon: 'success',
@@ -272,9 +274,41 @@
             timer: 6000
         });
         setTimeout(function(){
-            window.location.assign("index");
+            window.location.assign("index.php");
         }, 10000);
-    }
+
+    };
+
+    if (queryParameters().votelimit === "1"){
+
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Maximum number of vote reached',
+            showConfirmButton: false,
+            timer: 6000
+        });
+        setTimeout(function(){
+            window.location.assign("index.php");
+        }, 10000);
+
+    };
+
+    if (queryParameters().vottingclosed === "1"){
+
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Votting is closed',
+            showConfirmButton: false,
+            timer: 6000
+        });
+        setTimeout(function(){
+            window.location.assign("index.php");
+        }, 10000);
+
+    };
+
     if (queryParameters().transfer === "1"){
         Swal.fire({
             position: 'center',

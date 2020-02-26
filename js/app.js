@@ -36,18 +36,34 @@ function queryParameters () {
     return result;
 }
 
-let i = 10;
-let total = 50;
-let default_amount = 500;
+let i, total, default_amount, vottingMin, vottingMax;
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+
+  if (this.readyState == 4 && this.status == 200) {
+
+    const obj = JSON.parse(this.responseText);
+    i = obj.vottingmin;
+    vottingMin = obj.vottingmin;
+    total = obj.vottingmode;
+    default_amount = total * i;
+    vottingMax = obj.vottingmax;
+
+  }
+
+};
+xmlhttp.open('GET', 'vote_settings.php', false);
+xmlhttp.send();
+
 const next_button = document.getElementById("next1");
 
 const amount = document.getElementById("total-amount");
 const paymentAmount = document.getElementById("total-payment");
 
 function incNumber() {
-    if (i < 1000000) {
+    if (i < vottingMax) {
         i++;
-    } else if (i = 1000000) {
+    } else if (i == vottingMax) {
         i = 0;
     }
     document.getElementById("display").value = i;
@@ -56,17 +72,26 @@ function incNumber() {
     document.getElementById("total-payment").innerHTML = total * i;
     document.getElementById("total").value = total * i;
 
-    if ($("#display").val() == 10){
-        $("input#next1").removeClass('prev');
-        $("input#next1").prop("disabled", false);
+    if (parseInt($("#display").val()) == parseInt(vottingMin)) {
+
+      $("input#next1").removeClass('prev');
+      $("input#next1").prop("disabled", false);
+
+    } else if (parseInt($("#display").val()) == parseInt(0)) {
+
+      $("input#next1").addClass('prev');
+      $("input#next1").prop("disabled", true);
+
     }
+
 }
 
 function decNumber() {
+
     if (i > 0) {
         --i;
-    } else if (i = 0) {
-        i = 1000000;
+    } else if (i == 0) {
+        i = vottingMax;
     }
     document.getElementById("display").value = i;
     document.getElementById("count").value = i;
@@ -74,11 +99,20 @@ function decNumber() {
     document.getElementById("total-payment").innerHTML = total * i;
     document.getElementById("total").value = total * i;
 
-    if ($("#display").val() < 10){
-        $("input#next1").addClass('prev');
-        $("input#next1").prop("disabled", true);
+    if (parseInt($("#display").val()) < vottingMin){
+
+      $("input#next1").addClass('prev');
+      $("input#next1").prop("disabled", true);
+
+    } else if (parseInt($("#display").val()) == vottingMax) {
+
+      $("input#next1").removeClass('prev');
+      $("input#next1").prop("disabled", false);
+
     }
+
 }
+
 amount.innerText = default_amount;
 paymentAmount.innerText = default_amount;
 // amount_to_pay = amount.innerText;

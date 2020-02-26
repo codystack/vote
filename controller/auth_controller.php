@@ -1,6 +1,16 @@
 <?php
 // AUTH CONTROLLER FOR BACKEND
 session_start();
+// vote settings
+$sql = 'SELECT * FROM votesettings WHERE id="1"';
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+//initialize variables
+$_SESSION['VOTTING_PRICE'] = $row['vottingmode'];
+$_SESSION['VOTTING_STATUS'] = $row['vottingstatus'];
+$_SESSION['VOTTING_MIN'] = $row['vottingmin'];
+$_SESSION['VOTTING_MAX'] = $row['vottingmax'];
+
 // last request was more than 30 minutes ago
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     $id = $_SESSION['id'];
